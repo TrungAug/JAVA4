@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;dangky.jsp, result.jsp&apos; to &apos;param&apos;" description="Move 2 resources to &apos;param&apos;" destination="src/main/webapp/WEB-INF/views/param" element1="src/main/webapp/WEB-INF/views/dangky.jsp" element2="src/main/webapp/WEB-INF/views/result.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1699022640831" updateReferences="true"/>
+</session>

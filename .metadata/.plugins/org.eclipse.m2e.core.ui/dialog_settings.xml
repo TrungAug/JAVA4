@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="PC05132.Lab2.Bai2"/>
+			<item value="PC05132.Lab2"/>
+			<item value="Demo4"/>
+			<item value="PC05132_Lab2"/>
+			<item value="Demo3"/>
+			<item value="Demo2"/>
+			<item value="PC05132.Demo2"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="PC05132_Lab2_Bai2"/>
+			<item value="PC05132_Lab2_Bai1"/>
+			<item value="Demo4"/>
+			<item value="PC05132_Lab2"/>
+			<item value="Demo3"/>
+			<item value="Demo2"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

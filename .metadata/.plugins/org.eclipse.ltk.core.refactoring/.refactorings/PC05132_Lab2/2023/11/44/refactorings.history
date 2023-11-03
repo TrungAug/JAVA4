@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;PC05132_Lab2&apos;&#x0D;&#x0A;- Original project: &apos;PC05132_Lab2&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     PC05132.Lab2.Bai1.HomeServlet.java&#x0D;&#x0A;     PC05132.Lab2.Bai1.ParamServlet.java&#x0D;&#x0A;     PC05132.Lab2.Bai1.TamGiacServlet.java" description="Delete elements" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;PC05132.Lab2.Bai1{ParamServlet.java" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;PC05132.Lab2.Bai1{TamGiacServlet.java" element3="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;PC05132.Lab2.Bai1{HomeServlet.java" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1699006509351" subPackages="false" version="1.0"/>
+</session>

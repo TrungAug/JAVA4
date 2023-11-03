@@ -1,0 +1,14 @@
+package PC05132.Demo;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+@WebServlet({"/","/form"})
+public class RadioLoveFormController extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}
