@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Demo5"/>
+			<item value="PC05132.Lab2.Bai4"/>
 			<item value="PC05132.Lab2.Bai2"/>
 			<item value="PC05132.Lab2"/>
 			<item value="Demo4"/>
@@ -13,6 +15,8 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Demo5"/>
+			<item value="PC05132_Lab2_Bai4"/>
 			<item value="PC05132_Lab2_Bai2"/>
 			<item value="PC05132_Lab2_Bai1"/>
 			<item value="Demo4"/>

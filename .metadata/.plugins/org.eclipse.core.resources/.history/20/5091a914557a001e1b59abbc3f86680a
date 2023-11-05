@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="PC05132_Lab2_Bai2">
-        <property name="context-root" value="PC05132_Lab2_Bai2"/>
-        <property name="java-output-path" value="/PC05132_Lab2_Bai2/build/classes"/>
-    </wb-module>
-</project-modules>
