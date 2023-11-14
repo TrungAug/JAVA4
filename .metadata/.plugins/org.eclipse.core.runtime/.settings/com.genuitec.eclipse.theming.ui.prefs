@@ -1,9 +1,11 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1693315978000
 configurationInstallLocation=/C\:/Users/ASUS/eclipse/java-2023-09/eclipse/
+ct.upsell.display.after=1699844737256
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1699156993491
-lastConfiguration=1699156987076
-newinstall=true
+last.download.attempt.time=1699775875070
+lastConfiguration=1699932320919
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray

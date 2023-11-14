@@ -2,6 +2,14 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="PC05132_Lab4_Bai3"/>
+			<item value="PC05132_Lab4_Bai2"/>
+			<item value="PC05132_Lab4_Bai1"/>
+			<item value="PC05132_Lab3_Bai5"/>
+			<item value="PC05132_Lab3_Bai4"/>
+			<item value="PC05132_Lab3_Bai2"/>
+			<item value="PC05132_Lab3"/>
+			<item value="PC05132_Lab3_Bai1"/>
 			<item value="Demo5"/>
 			<item value="PC05132.Lab2.Bai4"/>
 			<item value="PC05132.Lab2.Bai2"/>
@@ -9,12 +17,17 @@
 			<item value="Demo4"/>
 			<item value="PC05132_Lab2"/>
 			<item value="Demo3"/>
-			<item value="Demo2"/>
-			<item value="PC05132.Demo2"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="PC05132_Lab4_Bai3"/>
+			<item value="PC05132_Lab4_Bai2"/>
+			<item value="PC05132_Lab4_Bai1"/>
+			<item value="PC05132_Lab3_Bai5"/>
+			<item value="PC05132_Lab3_Bai4"/>
+			<item value="PC05132_Lab3_Bai2"/>
+			<item value="PC05132_Lab3_Bai1"/>
 			<item value="Demo5"/>
 			<item value="PC05132_Lab2_Bai4"/>
 			<item value="PC05132_Lab2_Bai2"/>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="row">
+                <div class="myui-header__logo"><a class="logo" href="/"><img class="img-responsive"
+                            src="/static/logo.png"
+                            alt="HHPANDA.CC - He thong xem phim hoạt hình nhật bản, hoạt hình trung quốc sieu nhanh..."
+                            style="width:120px;"></a></div>
+                <div class="menu-block">
+                    <ul class="myui-header__menu nav-menu">
+                        <li class="active"><a href="/">Trang Chủ</a></li>
+                        <li class="hidden-sm"><a href="/hhtq">HH 3D trung quốc</a></li>
+                        <li><a href="#">Thể loại</a>
+                            <ul class="sub">
+                                <li><a title="Anime" href="/the-loai/anime">Anime</a></li>
+                                <li><a title="Hành động" href="/the-loai/hanh-dong">Hành động</a></li>
+                                <li><a title="Hài hước" href="/the-loai/hai-huoc">Hài hước</a></li>
+                                <li><a title="Tình cảm" href="/the-loai/tinh-cam">Tình cảm</a></li>
+                                <li><a title="Harem" href="/the-loai/harem">Harem</a></li>
+                                <li><a title="Bí ẩn" href="/the-loai/bi-an">Bí ẩn</a></li>
+                                <li><a title="Bi kịch" href="/the-loai/bi-kich">Bi kịch</a></li>
+                                <li><a title="Giả tưởng" href="/the-loai/gia-tuong">Giả tưởng</a></li>
+                                <li><a title="Học đường" href="/the-loai/hoc-duong">Học đường</a></li>
+                                <li><a title="Đời thường" href="/the-loai/doi-thuong">Đời thường</a></li>
+                                <li><a title="Võ thuật" href="/the-loai/vo-thuat">Võ thuật</a></li>
+                                <li><a title="Trò chơi" href="/the-loai/tro-choi">Trò chơi</a></li>
+                                <li><a title="Thám tử" href="/the-loai/tham-tu">Thám tử</a></li>
+                                <li><a title="Lịch sử" href="/the-loai/lich-su">Lịch sử</a></li>
+                                <li><a title="Siêu năng lực" href="/the-loai/sieu-nang-luc">Siêu năng lực</a></li>
+                                <li><a title="Shounen" href="/the-loai/shounen">Shounen</a></li>
+                                <li><a title="Shounen AI" href="/the-loai/shounen-ai">Shounen AI</a></li>
+                                <li><a title="Shoujo" href="/the-loai/shoujo">Shoujo</a></li>
+                                <li><a title="Shoujo AI" href="/the-loai/shoujo-ai">Shoujo AI</a></li>
+                                <li><a title="Thể thao" href="/the-loai/the-thao">Thể thao</a></li>
+                                <li><a title="Âm nhạc" href="/the-loai/am-nhac">Âm nhạc</a></li>
+                                <li><a title="Psychological" href="/the-loai/psychological">Psychological</a></li>
+                                <li><a title="Mecha" href="/the-loai/mecha">Mecha</a></li>
+                                <li><a title="Quân đội" href="/the-loai/quan-doi">Quân đội</a></li>
+                                <li><a title="Drama" href="/the-loai/drama">Drama</a></li>
+                                <li><a title="Seinen" href="/the-loai/seinen">Seinen</a></li>
+                                <li><a title="Siêu nhiên" href="/the-loai/sieu-nhien">Siêu nhiên</a></li>
+                                <li><a title="Phiêu lưu" href="/the-loai/phieu-luu">Phiêu lưu</a></li>
+                                <li><a title="Kinh dị" href="/the-loai/kinh-di">Kinh dị</a></li>
+                                <li><a title="Ma cà rồng" href="/the-loai/ma-ca-rong">Ma cà rồng</a></li>
+                                <li><a title="Tokusatsu" href="/the-loai/tokusatsu">Tokusatsu</a></li>
+                                <li><a title="Samurai" href="/the-loai/samurai">Samurai</a></li>
+                                <li><a title="Viễn tưởng" href="/the-loai/vien-tuong">Viễn tưởng</a></li>
+                                <li><a title="CN Animation" href="/the-loai/cn-animation">CN Animation</a></li>
+                                <li><a title="Tiên hiệp" href="/the-loai/tien-hiep">Tiên hiệp</a></li>
+                                <li><a title="Kiếm hiệp" href="/the-loai/kiem-hiep">Kiếm hiệp</a></li>
+                                <li><a title="Xuyên không" href="/the-loai/xuyen-khong">Xuyên không</a></li>
+                                <li><a title="Trùng sinh" href="/the-loai/trung-sinh">Trùng sinh</a></li>
+                                <li><a title="Huyền ảo" href="/the-loai/huyen-ao">Huyền ảo</a></li>
+                                <li><a title="[CNA] Ngôn tình" href="/the-loai/cna-ngon-tinh">[CNA] Ngôn tình</a></li>
+                                <li><a title="Dị giới" href="/the-loai/di-gioi">Dị giới</a></li>
+                                <li><a title="[CNA] Hài hước" href="/the-loai/cna-hai-huoc">[CNA] Hài hước</a></li>
+                                <li><a title="Đam mỹ" href="/the-loai/dam-my">Đam mỹ</a></li>
+                                <li><a title="Võ hiệp" href="/the-loai/vo-hiep">Võ hiệp</a></li>
+                                <li><a title="Ecchi" href="/the-loai/ecchi">Ecchi</a></li>
+                                <li><a title="Demon" href="/the-loai/demon">Demon</a></li>
+                                <li><a title="Live Action" href="/the-loai/live-action">Live Action</a></li>
+                                <li><a title="Thriller" href="/the-loai/thriller">Thriller</a></li>
+                                <li><a title="Khoa huyễn" href="/the-loai/khoa-huyen">Khoa huyễn</a></li>
+                            </ul>
+                        </li>
+                        <li class="hidden-sm"><a href="/lich-chieu">Lịch chiếu</a></li>
+                        <li class="hidden-sm"><a href="/moi-cap-nhat">Mới cập nhật</a></li>
+                        <li class="hidden-sm"><a href="/hoan-thanh">Hoàn thành</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="myui-header__search">
+                <div class="container">
+                    <div class="row">
+                        <ul class="">
+                            <li class="search-box dropdown-hover" href="javascript:;">
+                                <form id="search" name="search" method="get" action="/search"
+                                    onsubmit="return qrsearch();"><input type="text" id="keyword" name="q"
+                                        class="search_wd form-control" value="" placeholder="Tìm kiếm từ khóa..."
+                                        autocomplete="off"><button class="submit search_submit" id="searchbutton"
+                                        type="submit" name="submit"><i class="fa fa-search"></i></button></form>
+                                <div class="search-dropdown-hot dropdown-box bottom fadeInDown"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>

@@ -1,9 +1,0 @@
-package PC05132.Lab1;
-
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-
-@WebServlet("/param.php")
-public class ParamServlet extends HttpServlet {
-	
-}
