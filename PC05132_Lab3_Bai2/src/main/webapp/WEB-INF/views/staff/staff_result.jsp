@@ -26,9 +26,9 @@
                         <ul>
                             <li>Họ và tên: <b>${newbean.fullname}</b></li>
                             <li>Ngày sinh: <b>${newbean.birthday}</b></li>
-                            <li>Giới tính: <b>${newbean.gender}</b></li>
+                            <li>Giới tính: <b>${newbean.gender?"Nam":"Nữ"}</b></li>
                             <li>Quốc tịch: <b>${newbean.country}</b></li>
-                            <li>TT Hôn nhân: <b>${newbean.married}</b></li>
+                            <li>TT Hôn nhân: <b>${newbean.married?"Đã kết hôn":"Độc thân"}</b></li>
                             <li>Sở thích: <b>${newbean.hobbies}</b></li>
                             <li>Ghi chú: <b>${newbean.notes}</b></li>
                         </ul>
