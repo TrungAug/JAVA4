@@ -1,0 +1,64 @@
+<div id="accordion__size__detail__product__subsize" class="mb-3 text-black">
+    <div class="accordion" id="accordionPanelsHanKookSizeDetailProductSubSize">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#accordionTyreVehicleSubSize" aria-expanded="true"
+                    aria-controls="accordionTyreVehicleSubSize">
+                    215/45R17 XL
+                </button>
+            </h2>
+            <div id="accordionTyreVehicleSubSize" class="accordion-collapse collapse show"
+                data-bs-parent="#accordionPanelsHanKookSizeDetailProductSubSize">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Electric Vehicle
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="dt">Width: </span> <span class="dd">215</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="dt">Profile: </span> <span class="dd">45</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="dt">Rim: </span> <span class="dd">17</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="dt">Max Load / Load Index: </span> <span class="dd">615/91</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editorChangeProductModal">
+    Change product
+</button>
+<!-- Modal Trang Editor cho nút Change Product-->
+<div class="modal fade" id="editorChangeProductModal" tabindex="-1" aria-labelledby="editorChangeProductModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editorChangeProductModalLabel">Danh sách sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <button class="btn btn-info">Dùng c:forEach đổ danh sách sản phẩm vào đây</button>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <button class="btn btn-info">Khi click vào button sẽ trả về id sản phẩm</button>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <button class="btn btn-info">Từ id Sản phẩm lấy sản phẩm set vào product details và bảng Avaliables Size </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

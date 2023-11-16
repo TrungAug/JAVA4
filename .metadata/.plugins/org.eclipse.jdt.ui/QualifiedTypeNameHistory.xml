@@ -16,8 +16,6 @@
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.converters.DateTimeConverter"/>
     <fullyQualifiedTypeName name="pc05132.lab3.bai2.Staff"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.MultipartConfig"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.Part"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
@@ -49,4 +47,11 @@
     <fullyQualifiedTypeName name="jakarta.mail.internet.MimeMessage"/>
     <fullyQualifiedTypeName name="jakarta.mail.internet.MimeMessage.RecipientType"/>
     <fullyQualifiedTypeName name="jakarta.mail.Transport"/>
+    <fullyQualifiedTypeName name="jakarta.mail.Multipart"/>
+    <fullyQualifiedTypeName name="jakarta.mail.internet.MimeMultipart"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.Part"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="jakarta.mail.internet.MimeBodyPart"/>
+    <fullyQualifiedTypeName name="jakarta.activation.DataHandler"/>
+    <fullyQualifiedTypeName name="jakarta.activation.FileDataSource"/>
 </qualifiedTypeNameHistroy>
