@@ -54,11 +54,10 @@
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/templates/promotion.html">Promotion</a>
+                                            <a class="nav-link" href="#">Promotion</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" aria-current="page" href="/templates/help.html">Help &
-                                                Support</a>
+                                            <a class="nav-link" aria-current="page" href="#">Help & Support</a>
                                         </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -101,58 +100,114 @@
                 </form>
             </div>
         </header>
-        <main class="main mt-1 mb-1"
-            style="background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/local/img/tires/tires-kv/search-by-season/t_kv_112_3_Summer.jpg');">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card" style="background: rgba(24, 23, 23, 0.8); backdrop-filter: blur(30px); color: #fff;">
-                            <div class="card-body p-5 text-center">
-                                <h2 class="fw-bold mb-4" style="color: #0d6efd;">
-                                    <strong>Edit Profile</strong>
-                                    <strong style="color: rgb(231, 16, 16);">!!!</strong>
-                                </h2>
-                                <form name="formEditProfile">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <label class="form-label" for="editProfileFullname">Fullname</label>
-                                                <input type="text" id="editProfileFullname"
-                                                    name="editProfileInputFullname" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <label class="form-label" for="editProfileUsername">Username</label>
-                                                <input type="text" id="editProfileUsername"
-                                                    name="editProfileInputUsername" class="form-control" required>
-                                            </div>
-                                        </div>
-                                       
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline mb-4">
-                                                <label class="form-label" for="editProfileEmail">Email Address</label>
-                                                <input type="email" id="editProfileEmail" class="form-control"
-                                                    name="editProfileInputEmail" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline mb-4">
-                                                <label class="form-label" for="editProfilePass">Password</label>
-                                                <input type="password" id="editProfilePass" minlength="8"
-                                                    class="form-control" name="editProfileInputPass" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="editProfileDate">Birthday</label>
-                                        <input type="date" id="editProfileDate" class="form-control"
-                                            name="editProfileInputBirthday" required>
-                                    </div>
-                                    <button type="button" class="btn btn-primary btn-block mb-4" id="editProfileButton">
-                                        Update
+        <main class="main mt-1 mb-1">
+            <div class="row">
+                <div class="col-lg-8 col-md-8-col-sm-12">
+                    <div id="sliderCarouseDetailProduct" class="carousel slide mb-3" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#sliderCarouseDetailProduct" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#sliderCarouseDetailProduct" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#sliderCarouseDetailProduct" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="https://asset.hankooktire.com/content/dam/hankooktire/au/product/pcr/k135/Gallery_img1.jpg"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="https://asset.hankooktire.com/content/dam/hankooktire/au/product/pcr/k135/Gallery_img2.jpg"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="https://asset.hankooktire.com/content/dam/hankooktire/au/product/pcr/k135/Gallery_img3.jpg"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#sliderCarouseDetailProduct"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#sliderCarouseDetailProduct"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="name__product mb-4">
+                        <h2 style="color:  #999;;">Ventus Prime4</h2>
+                    </div>
+                    <div class="description__product mb-4">
+                        <h3>Optimum driving control and a comfortable ride</h3>
+                    </div>
+                    <div class="mb-4">
+                        <a class="btn btn-info">Where to buy</a>
+                    </div>
+                    <!-- onclick="localWhereToBuyUsInit();" -->
+                    <div id="accordion__size__detail__product" class="mb-4 text-black">
+                        <div class="accordion" id="accordionPanelsHanKookSizeDetailProduct">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#accordionTyreVehicleSize" aria-expanded="true"
+                                        aria-controls="accordionTyreVehicleSize">
+                                        Spec
                                     </button>
-                                </form>
+                                </h2>
+                                <div id="accordionTyreVehicleSize" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionPanelsHanKookSizeDetailProduct">
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div id="accordion__size__detail__product__subsize" class="mb-3 text-black">
+                                                <div class="accordion"
+                                                    id="accordionPanelsHanKookSizeDetailProductSubSize">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#accordionTyreVehicleSubSize"
+                                                                aria-expanded="true"
+                                                                aria-controls="accordionTyreVehicleSubSize">
+                                                                215/45R17 XL
+                                                            </button>
+                                                        </h2>
+                                                        <div id="accordionTyreVehicleSubSize"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#accordionPanelsHanKookSizeDetailProductSubSize">
+                                                            <ul class="list-group">
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                                                    <span class="dt">Width: </span> <span
+                                                                        class="dd">215</span>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                                                    <span class="dt">Profile: </span> <span
+                                                                        class="dd">45</span>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                                                    <span class="dt">Rim: </span> <span
+                                                                        class="dd">17</span>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                                                    <span class="dt">Max Load / Load Index: </span>
+                                                                    <span class="dd">615/91</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
