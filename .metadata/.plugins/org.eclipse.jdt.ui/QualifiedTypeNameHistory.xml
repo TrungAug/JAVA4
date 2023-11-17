@@ -26,8 +26,6 @@
     <fullyQualifiedTypeName name="java.io.Console"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.lab4.bai2.model.Users"/>
     <fullyQualifiedTypeName name="pc05132.lab4.bai2.dao.UsersDao"/>
     <fullyQualifiedTypeName name="pc05132.demo6.cookie.model.SimpleUser"/>
@@ -35,10 +33,7 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.ConvertUtils"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="pc05132.lab3.bai5.model.MailModel"/>
-    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="jakarta.mail.Session"/>
     <fullyQualifiedTypeName name="jakarta.mail.Authenticator"/>
@@ -54,4 +49,10 @@
     <fullyQualifiedTypeName name="jakarta.mail.internet.MimeBodyPart"/>
     <fullyQualifiedTypeName name="jakarta.activation.DataHandler"/>
     <fullyQualifiedTypeName name="jakarta.activation.FileDataSource"/>
+    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="pc05132.demo.ToDo"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
 </qualifiedTypeNameHistroy>
