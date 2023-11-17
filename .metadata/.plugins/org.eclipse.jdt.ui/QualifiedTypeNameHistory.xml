@@ -30,7 +30,6 @@
     <fullyQualifiedTypeName name="pc05132.lab4.bai2.dao.UsersDao"/>
     <fullyQualifiedTypeName name="pc05132.demo6.cookie.model.SimpleUser"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.converters.DateConverter"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.ConvertUtils"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="pc05132.lab3.bai5.model.MailModel"/>
@@ -55,4 +54,5 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>
