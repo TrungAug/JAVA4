@@ -49,10 +49,12 @@
     <fullyQualifiedTypeName name="jakarta.activation.DataHandler"/>
     <fullyQualifiedTypeName name="jakarta.activation.FileDataSource"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.demo.ToDo"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="pc05132.lab3.bai3.entity.Item"/>
+    <fullyQualifiedTypeName name="pc05132.lab3.bai3.DAO.ItemDAO"/>
 </qualifiedTypeNameHistroy>

@@ -1,4 +1,4 @@
-package pc05132.lab4.bai2;
+package pc05132.lab4.bai2.controller;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
