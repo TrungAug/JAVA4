@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="myui-header__logo ">
-                        <a class="home" href="/index.html" target="_self">
+                        <a class="home" href="${pageContext.request.contextPath}/home" target="_self">
                             <img class="logo"
                                 src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/main-key-visual/pc/logo.svg"
                                 alt="Hankook Tire">

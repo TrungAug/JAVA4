@@ -92,7 +92,7 @@
 											</a>
 										</div>
 										<div class="me-4">
-											<a href="" class="text-reset text-decoration-none"> <i
+											<a href="${pageContext.request.contextPath}/share" class="text-reset text-decoration-none"> <i
 												class="bi bi-share"></i> <span>1.099</span>
 											</a>
 										</div>

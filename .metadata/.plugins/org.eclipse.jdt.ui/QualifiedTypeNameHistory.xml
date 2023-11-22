@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
-    <fullyQualifiedTypeName name="java.lang.Double"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.nio.file.Path"/>
-    <fullyQualifiedTypeName name="java.nio.file.Paths"/>
-    <fullyQualifiedTypeName name="java.io.InputStream"/>
-    <fullyQualifiedTypeName name="java.nio.file.Files"/>
-    <fullyQualifiedTypeName name="java.nio.file.StandardOpenOption"/>
-    <fullyQualifiedTypeName name="java.nio.file.StandardCopyOption"/>
-    <fullyQualifiedTypeName name="PC05132.Demo.LoveBean"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.converters.DateTimeConverter"/>
@@ -24,7 +13,6 @@
     <fullyQualifiedTypeName name="javax.mail.Authenticator"/>
     <fullyQualifiedTypeName name="javax.mail.PasswordAuthentication"/>
     <fullyQualifiedTypeName name="java.io.Console"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="pc05132.lab4.bai2.model.Users"/>
     <fullyQualifiedTypeName name="pc05132.lab4.bai2.dao.UsersDao"/>
@@ -48,13 +36,28 @@
     <fullyQualifiedTypeName name="jakarta.mail.internet.MimeBodyPart"/>
     <fullyQualifiedTypeName name="jakarta.activation.DataHandler"/>
     <fullyQualifiedTypeName name="jakarta.activation.FileDataSource"/>
-    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="pc05132.demo.ToDo"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.lab3.bai3.entity.Item"/>
     <fullyQualifiedTypeName name="pc05132.lab3.bai3.DAO.ItemDAO"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="javax.naming.ldap.ManageReferralControl"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="pc05132.demo.users.model.User"/>
+    <fullyQualifiedTypeName name="pc05132.demo.users.model.Userss"/>
+    <fullyQualifiedTypeName name="pc05132.lab5.model.UserAcc"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EntityManagerFactory"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
+    <fullyQualifiedTypeName name="pc05132.lab5.bai1.model.RegisterUser"/>
+    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
 </qualifiedTypeNameHistroy>
