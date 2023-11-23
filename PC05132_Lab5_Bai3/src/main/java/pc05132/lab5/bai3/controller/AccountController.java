@@ -26,33 +26,46 @@ public class AccountController extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		AccountMod acc = new AccountMod();
 		String uri = req.getRequestURI();
-
+		String id = req.getParameter("id");
 		if (uri.contains("edit")) {
-			String id = uri.substring(uri.lastIndexOf("/") + 1);
+			id = uri.substring(uri.lastIndexOf("/") + 1);
 			acc = AccountModDAO.getInstance().findById(id);
 		} else if (uri.contains("create")) {
-			try {
-				BeanUtils.populate(acc, req.getParameterMap());
-				AccountModDAO.getInstance().create(acc);
-				req.setAttribute("message", "Insert Success");
-			} catch (Exception e) {
-				req.setAttribute("message", "Insert Failed");
+			if (AccountModDAO.getInstance().findById(id) == null) {
+				try {
+					BeanUtils.populate(acc, req.getParameterMap());
+					AccountModDAO.getInstance().create(acc);
+					req.setAttribute("message", "Insert Success");
+				} catch (Exception e) {
+					req.setAttribute("message", "Insert Failed");
+				}
+			} else {
+				req.setAttribute("message", "Username already exists " + id);
 			}
+
 		} else if (uri.contains("update")) {
-			try {
-				BeanUtils.populate(acc, req.getParameterMap());
-				AccountModDAO.getInstance().update(acc);
-				req.setAttribute("message", "Update Success");
-			} catch (Exception e) {
-				req.setAttribute("message", "Update Failed");
+			if (AccountModDAO.getInstance().findById(id) != null) {
+				try {
+					BeanUtils.populate(acc, req.getParameterMap());
+					AccountModDAO.getInstance().update(acc);
+					req.setAttribute("message", "Update Success");
+				} catch (Exception e) {
+					req.setAttribute("message", "Update Failed");
+				}
+			} else {
+				req.setAttribute("message", "Username does not exist " + id);
 			}
+
 		} else if (uri.contains("delete")) {
-			try {
-				String id = req.getParameter("id");
-				AccountModDAO.getInstance().remove(id);
-				req.setAttribute("message", "Delete Success");
-			} catch (Exception e) {
-				req.setAttribute("message", "Delete Failed");
+			if (AccountModDAO.getInstance().findById(id) != null) {
+				try {
+					AccountModDAO.getInstance().remove(id);
+					req.setAttribute("message", "Delete Success");
+				} catch (Exception e) {
+					req.setAttribute("message", "Delete Failed");
+				}
+			} else {
+				req.setAttribute("message", "Username does not exist " + id);
 			}
 		}
 

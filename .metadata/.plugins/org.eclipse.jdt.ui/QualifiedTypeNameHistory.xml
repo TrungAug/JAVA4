@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="pc05132.lab3.bai4.CookieUtils"/>
     <fullyQualifiedTypeName name="javax.mail.Session"/>
     <fullyQualifiedTypeName name="javax.mail.Authenticator"/>
@@ -45,19 +42,22 @@
     <fullyQualifiedTypeName name="pc05132.lab5.model.UserAcc"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai1.model.RegisterUser"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai2.UserEntity"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.EntityManagerFactory"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="jakarta.persistence.TypedQuery"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai3.untils.JpaUntils"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai3.model.AccountMod"/>
-    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai3.dao.AccountModDAO"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EntityManagerFactory"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="pc05132.lab5.bai4.untils.JpaUntils"/>
+    <fullyQualifiedTypeName name="pc05132.lab5.bai4.model.AccountMod"/>
+    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
+    <fullyQualifiedTypeName name="pc05132.lab5.bai4.dao.AccountDAO"/>
 </qualifiedTypeNameHistroy>
