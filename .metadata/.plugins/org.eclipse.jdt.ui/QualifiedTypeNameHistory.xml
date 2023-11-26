@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="jakarta.mail.Multipart"/>
-    <fullyQualifiedTypeName name="jakarta.mail.internet.MimeMultipart"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Part"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="jakarta.mail.internet.MimeBodyPart"/>
@@ -18,7 +16,6 @@
     <fullyQualifiedTypeName name="pc05132.lab5.model.UserAcc"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai1.model.RegisterUser"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai2.UserEntity"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.TypedQuery"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai3.untils.JpaUntils"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai3.model.AccountMod"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai3.dao.AccountModDAO"/>
@@ -26,14 +23,12 @@
     <fullyQualifiedTypeName name="pc05132.lab5.bai4.model.AccountMod"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="pc05132.lab5.bai4.dao.AccountDAO"/>
-    <fullyQualifiedTypeName name="pc05132.demo.videomanager.model.UserAcc"/>
     <fullyQualifiedTypeName name="pc05132.demo.videomanager.model.Video"/>
     <fullyQualifiedTypeName name="pc05132.demo.videomanager.model.Favorite"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Temporal"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="java.lang.Process"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
@@ -50,14 +45,19 @@
     <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.Image"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.Like"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.Share"/>
     <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
     <fullyQualifiedTypeName name="jakarta.persistence.UniqueConstraint"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EntityManagerFactory"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
     <fullyQualifiedTypeName name="org.eclipse.angus.mail.handlers.handler_base"/>
     <fullyQualifiedTypeName name="pc05132.hankook.untils.HankookUntils"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.TypedQuery"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="pc05132.demo.videomanager.model.UserAcc"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.NamedQuery"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Nationalized"/>
 </qualifiedTypeNameHistroy>

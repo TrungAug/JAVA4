@@ -8,11 +8,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
+@NamedQuery(
+		name = "UserAcc.findByFavoriteVideo",
+		query = "select o.userx from Favorite o where o.videox.id=:videoId"
+		
+		)
 @Entity
 @Table(name = "favorites", uniqueConstraints = {@UniqueConstraint(columnNames = { "user_id", "video_id" }) })
 public class Favorite {

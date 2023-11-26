@@ -16,17 +16,9 @@
     <div class="container-fluid">
         <%@ include file="/WEB-INF/views/component/header.jsp" %>
         <main class="main">
-            <div class="row d-flex justify-content-between align-items-center">
-                <div class="col">
-                    <h1 style="color: #999;">Website Administration</h1>
-                </div>
-                <div class="col text-end">
-                    <a type="button" class="text-info" data-bs-toggle="modal"
-                        data-bs-target="#editorAddProductModal">
-                        Add Product
-                    </a>
-                </div>
-            </div>     
+            <section class="m-3">
+                <h1 style="color: #999;">Website Administration</h1>
+            </section>
             <div class="row mt-5">
                 <div class="col-lg-4 col-md-4 col-sm-12" id="sidebar-login-n-categories">
                     <div id="editor_product" class="mb-3 text-white">
@@ -378,95 +370,6 @@
                                 <button class="btn btn-outline-info" type="button">Reset</button>
                                 <button class="btn btn-outline-info" type="button">Save Changes</button>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal Trang Editor cho nút Add Product-->
-    <div class="modal fade" id="editorAddProductModal" tabindex="-1" aria-labelledby="editorAddProductModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-info" id="editorAddProductModalLabel">Thêm sản phẩm mới</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body row d-flex justify-content-center">
-                    <form action="">
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Product ID</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Product Name</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <p>Tyre Type:</p>
-                            <div class="col-lg-2 col-md-3 col-sm-4 m-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Lặp thực thể tyre ở đậy
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a description here"
-                                    id="floatingDescription"></textarea>
-                                <label for="floatingDescription">Description</label>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-md-4">
-                                <div class="input-group mb-3">
-                                    <input type="file" class="form-control" id="inputGroupFile01">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="input-group mb-3">
-                                    <input type="file" class="form-control" id="inputGroupFile02">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="input-group mb-3">
-                                    <input type="file" class="form-control" id="inputGroupFile03">
-                                </div>
-                            </div>
-                            <div class="col text-danger">
-                                (*) Choose File Image: Leave empty if no change
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <p>Publish:</p>
-                            <div class="col-lg-2 col-md-3 col-sm-4 m-2">
-                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check" name="chkPublish" id="chkActive"
-                                        autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="chkActive">Active</label>
-
-                                    <input type="radio" class="btn-check" name="chkPublish" id="chkInactive"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="chkInactive">Inactive</label>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row mt-5 d-flex justify-content-end">
-                            <button type="button" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>

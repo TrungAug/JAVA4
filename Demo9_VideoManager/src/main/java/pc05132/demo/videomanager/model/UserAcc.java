@@ -2,6 +2,8 @@ package pc05132.demo.videomanager.model;
 
 import java.util.List;
 
+import org.hibernate.annotations.Nationalized;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -12,6 +14,7 @@ import jakarta.persistence.Table;
 public class UserAcc {
 	@Id
 	private String id;
+	//@Nationalized //ép về kiểu Nvarchar trên sql
 	private String username;
 	private String password;
 	private String email;

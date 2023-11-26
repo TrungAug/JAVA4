@@ -19,7 +19,7 @@ public class HankookUntils {
 		emf=null;
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(HankookUntils.getEntityManager());
-	}
+//	public static void main(String[] args) {
+//		System.out.println(HankookUntils.getEntityManager());
+//	}
 }

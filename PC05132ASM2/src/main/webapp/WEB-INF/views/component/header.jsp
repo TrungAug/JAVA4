@@ -54,16 +54,16 @@
                                                 Account
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/updateaccout">Update
+                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/update-account">Update
                                                         Account</a></li>
-                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/forgetpass">Forget
+                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/forget-pass">Forget
                                                         Password</a></li>
                                                 <li>
                                                     <hr class="dropdown-divider">
                                                 </li>
-                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/signin">Sign in</a>
+                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/sign-in">Sign in</a>
                                                 </li>
-                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/signup">Sign up</a>
+                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/sign-up">Sign up</a>
                                                 </li>
                                             </ul>
                                         </li>
