@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "userss")
@@ -16,8 +18,9 @@ public class User {
 	private String fullName;
 	private String passWord;
 	private String email;
+	@Temporal(TemporalType.DATE)
 	private Date birthDay;
-	private Boolean admin;
+	private boolean admin;
 
 	@OneToMany(mappedBy = "userss")
 	List<Share> shares;
@@ -65,11 +68,12 @@ public class User {
 		this.birthDay = birthDay;
 	}
 
-	public Boolean getAdmin() {
+
+	public boolean isAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(Boolean admin) {
+	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
 

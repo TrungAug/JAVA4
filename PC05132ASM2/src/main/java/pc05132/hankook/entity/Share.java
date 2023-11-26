@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
@@ -24,7 +26,8 @@ public class Share {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idShare;
-	private Date dateShare;
+	@Temporal(TemporalType.DATE)
+	private Date dateShare=new Date(System.currentTimeMillis());
 	@ManyToOne
 	@JoinColumn(name = "user_id_fk_share")
 	private User userss;

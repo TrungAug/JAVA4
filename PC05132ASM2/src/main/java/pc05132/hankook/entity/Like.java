@@ -9,49 +9,56 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "likes", 
-uniqueConstraints = { 
-		@UniqueConstraint(
-				columnNames = { "user_id_fk_like", "product_id_fk_like" })})
+@Table(name = "likes", uniqueConstraints = {
+		@UniqueConstraint(columnNames = { "user_id_fk_like", "product_id_fk_like" }) })
 public class Like {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idLike;
-	private Date dateLike;
+	@Temporal(TemporalType.DATE)
+	private Date dateLike=new Date(System.currentTimeMillis());
 	@ManyToOne
 	@JoinColumn(name = "user_id_fk_like")
 	private User userss;
 	@ManyToOne
 	@JoinColumn(name = "product_id_fk_like")
 	private Product product;
+
 	public int getIdLike() {
 		return idLike;
 	}
+
 	public void setIdLike(int idLike) {
 		this.idLike = idLike;
 	}
+
 	public Date getDateLike() {
 		return dateLike;
 	}
+
 	public void setDateLike(Date dateLike) {
 		this.dateLike = dateLike;
 	}
-	
+
 	public Product getProduct() {
 		return product;
 	}
+
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+
 	public User getUserss() {
 		return userss;
 	}
+
 	public void setUserss(User userss) {
 		this.userss = userss;
 	}
-	
-	
+
 }

@@ -69,8 +69,8 @@
 											name="birthDay" required>
 									</div>
 									<div class="form-check d-flex justify-content-center mb-4">
-										<input class="form-check-input me-2" type="checkbox" value=""
-											id="registerModalPassCheckBox" name="admin" checked /> <label
+										<input class="form-check-input me-2" type="checkbox" 
+											id="registerModalPassCheckBox" name="admin" /> <label
 											class="form-check-label" for="registerModalPassCheckBox">
 											Admin? </label>
 									</div>
@@ -103,7 +103,7 @@
 	<script>
         setTimeout(function() {
             document.getElementById('messageInfo').style.display = 'none';
-        }, 2000);
+        }, 3000);
     </script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

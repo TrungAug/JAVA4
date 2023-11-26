@@ -37,7 +37,7 @@
 										<div class="col-md-12 mb-4">
 											<div class="form-outline">
 												<label class="form-label" for="signInUsername">Username</label>
-												<input type="text" id="signInUsername" name="username"
+												<input type="text" id="signInUsername" name="username" value="${usernameC}"
 													class="form-control" required>
 											</div>
 										</div>
@@ -45,13 +45,13 @@
 											<div class="form-outline mb-4">
 												<label class="form-label" for="signInPass">Password</label>
 												<input type="password" id="signInPass" class="form-control"
-													name="password" required>
+													name="password" value="${passwordC}" required>
 											</div>
 										</div>
 									</div>
 									<div class="form-check d-flex justify-content-center mb-4">
-										<input class="form-check-input me-2" type="checkbox" value=""
-											id="rememberPasswordCheckBoxSignInForm" name="rememver"
+										<input class="form-check-input me-2" type="checkbox" 
+											id="rememberPasswordCheckBoxSignInForm" name="remember"
 											checked /> <label class="form-check-label"
 											for="rememberPasswordCheckBoxSignInForm"> Remember
 											Password? </label>
@@ -86,7 +86,7 @@
 		setTimeout(
 				function() {
 					document.getElementById('messageInfoSignIn').style.display = 'none';
-				}, 2000);
+				}, 3000);
 	</script>
 
 	<script
