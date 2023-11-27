@@ -30,29 +30,40 @@ public class VideoUntils {
 //	public static void main(String[] args) {
 //		System.out.println(VideoUntils.getEntityManager());
 //	}
-	
-	public static <T> List<T> excuteQuey(String jpaql,Class<T> myClass ){
+
+	public static <T> List<T> excuteQuey(String jpaql, Class<T> myClass) {
 		List<T> listT = new ArrayList<>();
-		try(EntityManager em = VideoUntils.getEntityManager()){
-			TypedQuery<T> jpQuery =em.createQuery(jpaql, myClass);
+		try (EntityManager em = VideoUntils.getEntityManager()) {
+			TypedQuery<T> jpQuery = em.createQuery(jpaql, myClass);
 			listT = jpQuery.getResultList();
 		}
 		return listT;
 	}
-	
-	public static <T> List<T> excuteNamedQuery(String paramName, Object paramValue, String namedQueryName,Class<T> myClass ){
+
+	public static <T> List<T> excuteNamedQuery(String paramName, Object paramValue, String namedQueryName,
+			Class<T> myClass) {
 		List<T> listT = new ArrayList<>();
-		try(EntityManager em = VideoUntils.getEntityManager()){
-			TypedQuery<T> namedQuery =em.createNamedQuery(namedQueryName, myClass);
-			if (!Objects.isNull(paramName) && paramValue != null) {
-                namedQuery.setParameter(paramName, paramValue);
-            }	
-			//namedQuery.setParameter(paramName, paramValue);
+		try (EntityManager em = VideoUntils.getEntityManager()) {
+			TypedQuery<T> namedQuery = em.createNamedQuery(namedQueryName, myClass);
+			namedQuery.setParameter(paramName, paramValue);
 			listT = namedQuery.getResultList();
-		}	
+
+		}
 		return listT;
 	}
-	
-	
-	
+
+//	public static <T> List<T> excuteNamedQuery(String paramName, Object paramValue, String namedQueryName,Class<T> myClass ){
+//		List<T> listT = new ArrayList<>();
+//		try(EntityManager em = VideoUntils.getEntityManager()){
+//			TypedQuery<T> namedQuery =em.createNamedQuery(namedQueryName, myClass);
+//			if (!Objects.isNull(paramName) && paramValue != null) {
+//                namedQuery.setParameter(paramName, paramValue);
+//                listT = namedQuery.getResultList();
+//            }else {
+//            	listT = namedQuery.getResultList();
+//            }		
+//		}	
+//		return listT;
+//	}
+
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Java4</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -24,7 +25,8 @@
 		<div class="form_lab6_bai2 m-3">
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
-					<form action="../find/favorite-or-not" method="post">
+					<form action="../find/favorite-or-not" method="post"
+						id="filterForm">
 						<div class="card bg-info text-white">
 							<div class="card-header">
 								<div class="card-title">
@@ -69,16 +71,16 @@
 										</tr>
 									</thead>
 									<tbody class="table-group-divider">
-									<c:forEach var="vd" items="${listVideoByFavorite }">
-										<tr>
-											<td>${vd.id }</td>
-											<td>${vd.title }</td>
-											<td>${vd.views }</td>
-											<td>${vd.active?'Active':'No active'}</td>
-										</tr>
-									
-									</c:forEach>
-										
+										<c:forEach var="vd" items="${myList}">
+											<tr>
+												<td>${vd.id}</td>
+												<td>${vd.title}</td>
+												<td>${vd.views}</td>
+												<td>${vd.active?'Active':'No active'}</td>
+											</tr>
+
+										</c:forEach>
+
 									</tbody>
 								</table>
 							</div>
@@ -90,10 +92,19 @@
 
 
 	</div>
-
-
-
-
+	<script>
+		$(document).ready(function() {
+			$('input[name="favorite"]').on('change', function() {
+				var isFavorite = $(this).val();
+				$.post("../find/favorite-or-not", {
+					favorite : isFavorite
+				}, function(data) {
+					// Xử lý kết quả từ servlet nếu cần
+					console.log(data);
+				});
+			});
+		});
+	</script>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

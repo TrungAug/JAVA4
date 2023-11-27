@@ -55,9 +55,9 @@
     <fullyQualifiedTypeName name="pc05132.lab6.bai2.model.UserAcc"/>
     <fullyQualifiedTypeName name="jakarta.persistence.NamedQuery"/>
     <fullyQualifiedTypeName name="jakarta.persistence.NamedQueries"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.lab6.bai2.untils.VideoUntils"/>
     <fullyQualifiedTypeName name="pc05132.lab6.bai2.model.Video"/>
-    <fullyQualifiedTypeName name="java.util.Objects"/>
 </qualifiedTypeNameHistroy>
