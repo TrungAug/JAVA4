@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +20,8 @@
 	style="height: 100vh;">
 
 	<div class="container-fluid">
-		<div class="form_lab6_bai2 mb-3">
+		<%@ include file="/WEB-INF/views/component/header.jsp"%>
+		<div class="form_lab6_bai2 m-3">
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
 					<form action="../find/favorite-or-not" method="post">
@@ -31,12 +33,14 @@
 							</div>
 							<div class="card-body d-flex flex-row">
 								<h3>${message}</h3>
-								<label class="form-label p-3">Lọc theo:</label> 
+								<label class="form-label p-3">Lọc theo:</label>
 								<div class="favorite p-3">
-								<input class="form-check-input" type="radio" name="favorite" value="true">Favorite
+									<input class="form-check-input" type="radio" name="favorite"
+										value="true">Favorite
 								</div>
 								<div class="not-favorite p-3">
-								<input class="form-check-input" type="radio" name="favorite" value="false">Not Favorite			
+									<input class="form-check-input" type="radio" name="favorite"
+										value="false">Not Favorite
 								</div>
 							</div>
 						</div>
@@ -65,12 +69,16 @@
 										</tr>
 									</thead>
 									<tbody class="table-group-divider">
+									<c:forEach var="vd" items="${listVideoByFavorite }">
 										<tr>
-											<td>Username1</td>
-											<td>Password1</td>
-											<td>100</td>
-											<td>True</td>
+											<td>${vd.id }</td>
+											<td>${vd.title }</td>
+											<td>${vd.views }</td>
+											<td>${vd.active?'Active':'No active'}</td>
 										</tr>
+									
+									</c:forEach>
+										
 									</tbody>
 								</table>
 							</div>
