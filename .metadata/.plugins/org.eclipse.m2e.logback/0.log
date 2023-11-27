@@ -10361,3 +10361,226 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.core.runtime.IPath.to
 2023-11-26 20:48:30,378 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped Server@7068bef9{STOPPING}[10.0.15,sto=0]
 2023-11-26 20:48:30,387 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@7b176bb4{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
 2023-11-26 20:48:30,403 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@15561b98{/help,null,STOPPED}
+2023-11-27 08:31:59,187 [Worker-10: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-11-27 08:34:31,694 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: PC05132_Lab6_Bai2:PC05132_Lab6_Bai2:0.0.1-SNAPSHOT @ D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\pom.xml.
+2023-11-27 08:34:34,127 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PC05132_Lab6_Bai2/src/main/java
+2023-11-27 08:34:34,127 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PC05132_Lab6_Bai2/src/main/resources
+2023-11-27 08:34:34,128 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PC05132_Lab6_Bai2/src/test/java
+2023-11-27 08:34:34,129 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PC05132_Lab6_Bai2/src/test/resources
+2023-11-27 08:34:34,599 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2023-11-27 08:34:34,980 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: PC05132_Lab6_Bai2:PC05132_Lab6_Bai2:0.0.1-SNAPSHOT @ D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\pom.xml.
+2023-11-27 08:34:35,537 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PC05132_Lab6_Bai2/src/main/java
+2023-11-27 08:34:35,537 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PC05132_Lab6_Bai2/src/main/resources
+2023-11-27 08:34:35,537 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PC05132_Lab6_Bai2/src/test/java
+2023-11-27 08:34:35,538 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PC05132_Lab6_Bai2/src/test/resources
+2023-11-27 08:34:35,642 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for PC05132_Lab6_Bai2
+2023-11-27 08:34:35,655 [Worker-11: Enabling Maven Dependency Management] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 0.00 sec 
+2023-11-27 08:34:35,855 [Worker-16: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:34:35,856 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:34:35,860 [Worker-16: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:34:35,861 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:34:35,862 [Worker-16: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of PC05132_Lab6_Bai2
+2023-11-27 08:34:35,863 [Worker-16: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for PC05132_Lab6_Bai2
+2023-11-27 08:34:38,810 [Worker-15: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: PC05132_Lab6_Bai2:PC05132_Lab6_Bai2:0.0.1-SNAPSHOT @ D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\pom.xml.
+2023-11-27 08:34:40,006 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:34:40,007 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:34:40,012 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:34:40,013 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:34:40,013 [Worker-15: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of PC05132_Lab6_Bai2
+2023-11-27 08:34:40,013 [Worker-15: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for PC05132_Lab6_Bai2
+2023-11-27 08:37:25,218 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:37:25,219 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:37:25,224 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:37:25,225 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:39:08,586 [Worker-12: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:39:08,588 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:39:08,591 [Worker-12: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:39:08,592 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:39:26,679 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:39:26,680 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:39:26,685 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:39:26,686 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:39:59,001 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:39:59,002 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:39:59,006 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:39:59,008 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:41:15,920 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:41:15,921 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:41:15,924 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:41:15,924 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:41:48,842 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:41:48,844 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:41:48,846 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:41:48,847 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:42:22,271 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:42:22,273 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:42:22,280 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:42:22,282 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:43:09,422 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:43:09,424 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:43:09,431 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:43:09,433 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:43:51,065 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:43:51,067 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:43:51,072 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:43:51,074 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:45:06,761 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:45:06,763 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:45:06,769 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:45:06,771 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:47:03,163 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:47:03,164 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:47:03,168 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:47:03,169 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:48:24,054 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:48:24,055 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:48:24,059 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:48:24,060 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:49:55,882 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:49:55,884 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:49:55,887 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:49:55,888 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:50:56,966 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:50:56,967 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:50:56,970 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:50:56,970 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:51:05,677 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:51:05,678 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:51:05,680 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:51:05,681 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:52:36,628 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:52:36,628 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:52:36,631 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:52:36,631 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:53:15,456 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:53:15,456 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:53:15,460 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:53:15,461 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:53:48,001 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:53:48,004 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:53:48,011 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:53:48,013 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:54:03,333 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:03,334 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:54:03,337 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:03,338 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:54:09,644 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:09,646 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:54:09,652 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:09,654 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:54:28,969 [Worker-12: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:28,970 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:54:28,975 [Worker-12: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:28,976 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:54:57,089 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:57,090 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:54:57,093 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:54:57,093 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:55:56,870 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:55:56,871 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:55:56,874 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:55:56,875 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:56:13,733 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:56:13,734 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:56:13,739 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:56:13,740 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:56:41,365 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:56:41,366 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:56:41,370 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:56:41,371 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:57:36,821 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:57:36,823 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:57:36,827 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:57:36,828 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:58:17,460 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:58:17,461 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:58:17,463 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:58:17,464 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:58:51,394 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:58:51,395 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:58:51,397 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:58:51,397 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:59:25,612 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:59:25,614 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:59:25,622 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:59:25,624 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 08:59:39,472 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:59:39,473 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 08:59:39,477 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 08:59:39,479 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:00:32,014 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:00:32,014 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:00:32,017 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:00:32,018 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:00:50,273 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:00:50,275 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:00:50,280 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:00:50,282 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:02:31,077 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:02:31,078 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:02:31,083 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:02:31,084 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:03:12,547 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:03:12,548 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:03:12,551 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:03:12,551 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:03:39,248 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:03:39,250 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:03:39,254 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:03:39,256 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:04:10,762 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:04:10,762 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:04:10,765 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:04:10,765 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:04:21,795 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:04:21,797 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:04:21,802 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:04:21,804 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:07:28,306 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:07:28,310 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:07:28,314 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:07:28,316 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:07:50,283 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:07:50,284 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:07:50,288 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:07:50,289 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:08:33,742 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:08:33,744 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:08:33,750 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:08:33,752 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:08:48,681 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:08:48,682 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:08:48,683 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:08:48,684 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:11:09,027 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:11:09,029 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:11:09,034 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:11:09,036 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:12:44,011 [Worker-30: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:12:44,011 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:12:44,014 [Worker-30: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:12:44,015 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:13:02,847 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:13:02,848 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:13:02,851 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:13:02,852 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:13:27,383 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:13:27,384 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:13:27,389 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:13:27,390 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:13:47,346 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:13:47,348 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:13:47,354 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:13:47,356 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:14:59,557 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:14:59,558 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:14:59,563 [Worker-27: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:14:59,565 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:15:13,963 [Worker-30: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:15:13,964 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:15:13,966 [Worker-30: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:15:13,967 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources
+2023-11-27 09:18:58,859 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:18:58,860 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\main\resources
+2023-11-27 09:18:58,865 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-11-27 09:18:58,866 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\5. FALL 2023\Java4\BaiLab\PC05132_Lab6_Bai2\src\test\resources

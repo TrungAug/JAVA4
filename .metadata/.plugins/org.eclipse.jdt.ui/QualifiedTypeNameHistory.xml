@@ -31,7 +31,6 @@
     <fullyQualifiedTypeName name="jakarta.persistence.EntityManagerFactory"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
     <fullyQualifiedTypeName name="org.eclipse.angus.mail.handlers.handler_base"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="jakarta.persistence.TypedQuery"/>
     <fullyQualifiedTypeName name="pc05132.demo.videomanager.model.UserAcc"/>
     <fullyQualifiedTypeName name="jakarta.persistence.NamedQuery"/>
@@ -53,11 +52,12 @@
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.User"/>
     <fullyQualifiedTypeName name="pc05132.hankook.dao.UserDao"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="pc05132.hankook.untils.CookiesUntils"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
 </qualifiedTypeNameHistroy>
