@@ -14,7 +14,7 @@ import jakarta.persistence.StoredProcedureParameter;
 	
 	@NamedStoredProcedureQuery(
 				name = "Report.favoriteByYear",
-				procedureName = "Report.favoriteByYear",
+				procedureName = "spFavoriteByYear",
 				parameters = {
 						@StoredProcedureParameter(name="year",type=Integer.class)
 				},

@@ -25,7 +25,7 @@
 		<div class="form_lab6_bai2 m-3">
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
-					<form action="../find/report" method="post" id="filterForm">
+					<form action="../find/favorite-by-year" method="post" id="filterForm">
 						<div class="card bg-info text-white">
 							<div class="card-header">
 								<div class="card-title">
@@ -41,6 +41,7 @@
 									<option value="2021">2021</option>
 									<option value="2020">2020</option>
 								</select>
+								<button class="btn btn-success">Xem danh sách</button>
 							</div>
 						</div>
 					</form>

@@ -1,17 +1,18 @@
 package pc05132.lab6.bai3.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import pc05132.lab6.bai3.model.Report;
 import pc05132.lab6.bai3.model.UserAcc;
 import pc05132.lab6.bai3.model.Video;
 import pc05132.lab6.bai3.untils.VideoUntils;
@@ -47,7 +48,10 @@ public class Lab6Controller extends HttpServlet {
 			this.doFindByKeyWord(req, resp);
 			return;
 		} else if (uri.contains("by-date")) {
-
+			String jpaqlVd = "select o from Video o";
+			List<Video> listVd = VideoUntils.excuteQuey(jpaqlVd, Video.class);
+			req.setAttribute("listUsByDate", listVd);
+			
 			this.doFindUserByDate(req, resp);
 			return;
 		} else if (uri.contains("by-month")) {
@@ -89,10 +93,33 @@ public class Lab6Controller extends HttpServlet {
 
 	private void doFindUserByDate(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-//
-//		List<UserAcc> listUs = VideoUntils.excuteNamedQuery("videoId", req.getParameter("videoIdInput"),
-//				"UserAcc.findUserFavoriteByVideoId", UserAcc.class);
-//		req.setAttribute("listUsByVideoId", listUs);
+		
+		String method=req.getMethod();
+		if(method.equalsIgnoreCase("POST")) {
+			String fromDate1 = req.getParameter("FromDate");
+			String toDate1= req.getParameter("ToDate");
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				java.util.Date dateF = df.parse(fromDate1);
+				java.util.Date dateT = df.parse(toDate1);
+				java.sql.Date fromDate = new java.sql.Date(dateF.getTime());
+				java.sql.Date toDate = new java.sql.Date(dateT.getTime());
+				
+				try(EntityManager em = VideoUntils.getEntityManager()){
+					TypedQuery<Video> qry= em.createNamedQuery("Video.findInRangeDate", Video.class);
+					qry.setParameter("min",fromDate);
+					qry.setParameter("max", toDate);
+					List<Video> listVd = qry.getResultList();
+					
+					req.setAttribute("mess",fromDate+" đến "+toDate);
+					req.setAttribute("listUsByDate", listVd);
+				}
+				
+			} catch (Exception e) {
+				req.setAttribute("mess","Vui lòng chọn ngày");
+				e.printStackTrace();
+			}							
+		}
 
 		req.getRequestDispatcher("/WEB-INF/views/search/bydate.jsp").forward(req, resp);
 	}

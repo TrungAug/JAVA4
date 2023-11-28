@@ -100,20 +100,6 @@
 
 
 	</div>
-	<script>
-		$(document).ready(function() {
-			$('input[name="favorite"]').on('change', function() {
-				var isFavorite = $(this).val();
-				$.post("../find/favorite-or-not", {
-					favorite : isFavorite
-				}, function(data) {
-					// Xử lý kết quả từ servlet nếu cần
-					console.log("data from jsp: "data);
-					
-				});
-			});
-		});
-	</script>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

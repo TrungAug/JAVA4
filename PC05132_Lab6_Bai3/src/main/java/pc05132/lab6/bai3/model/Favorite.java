@@ -36,7 +36,12 @@ import jakarta.persistence.UniqueConstraint;
 			name = "Video.findVideoByKeyWord",
 			query = "Select distinct o.videox from Favorite o where o.videox.title like :paramKeyword"		
 			),
-	@NamedQuery(name = "Video.findInMonths", query = "SELECT DISTINCT o.videox FROM Favorite o WHERE month(o.likeDate) IN (:months)")
+	@NamedQuery(
+			name = "Video.findInMonths", 
+			query = "SELECT DISTINCT o.videox FROM Favorite o WHERE month(o.likeDate) IN (:months)"),
+	@NamedQuery(
+			name = "Video.findInRangeDate",
+			query = "SELECT DISTINCT o.videox FROM Favorite o WHERE o.likeDate BETWEEN :min AND :max")
 	
 })
 

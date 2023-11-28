@@ -43,9 +43,9 @@
 										class="form-control form-control-lg" name="ToDate"
 										placeholder="To Date" />
 								</div>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-success">Hiển thị danh sách</button>
+								<div class="show-detail">
+									<button class="btn btn-success">Hiển thị danh sách</button>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -58,7 +58,7 @@
 					<div class="card">
 						<div class="card-header">
 							<div class="card-title">
-								<h3>Danh sách Video</h3>
+								<h3>Danh sách Video từ ${mess}</h3>
 							</div>
 						</div>
 						<div class="card-body">
@@ -66,19 +66,19 @@
 								<table class="table align-middle table-dark table-hover">
 									<thead>
 										<tr>
-											<th scope="col">Username</th>
-											<th scope="col">Fullname</th>
-											<th scope="col">Email</th>
-											<th scope="col">Role</th>
+											<th scope="col">Id</th>
+											<th scope="col">Title</th>
+											<th scope="col">Views</th>
+											<th scope="col">Active</th>
 										</tr>
 									</thead>
 									<tbody class="table-group-divider">
-										<c:forEach var="user" items="${listUsByDate}">
+										<c:forEach var="vd" items="${listUsByDate}">
 											<tr>
-												<td>${user.id}</td>
-												<td>${user.username}</td>
-												<td>${user.email}</td>
-												<td>${user.admin?'Admin':'User'}</td>
+												<td>${vd.id}</td>
+												<td>${vd.title}</td>
+												<td>${vd.views}</td>
+												<td>${vd.active?'Active':'No active'}</td>
 											</tr>
 										</c:forEach>
 									</tbody>

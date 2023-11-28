@@ -17,44 +17,39 @@ import pc05132.lab6.bai4.model.UserAcc;
 import pc05132.lab6.bai4.model.Video;
 import pc05132.lab6.bai4.untils.VideoUntils;
 
-
-@WebServlet({ "/home", "/find/*"})
+@WebServlet({ "/home", "/find/*" })
 public class Lab6Controller extends HttpServlet {
-
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
 		if (uri.contains("random")) {
-			
 
 			this.doRandomVideo(req, resp);
 			return;
-		 
-		}else if(uri.contains("report")) {
-			
-			
-			this.doFindReportByYear(req, resp);
+
+		} else if (uri.contains("favorite-by-year")) {
+
+			String jpql = "Select new Report(o.videox.title,count(o),max(o.likeDate),min(o.likeDate)) From Favorite o Group By o.videox.title";
+			List<Report> listRP = VideoUntils.excuteQuey(jpql, Report.class);
+			req.setAttribute("myListRP", listRP);
+
+			this.doFindFavoriteByYear(req, resp);
 			return;
 		}
-		
-		
-		
-		
+
 		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 	}
 
-	private void doRandomVideo(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		
-		try(EntityManager em = VideoUntils.getEntityManager()){
-			Query query=em.createNamedQuery("Report.random5");
+	private void doRandomVideo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		try (EntityManager em = VideoUntils.getEntityManager()) {
+			Query query = em.createNamedQuery("Report.random5");
 			List<Video> listVd = query.getResultList();
 			req.setAttribute("myListRandom", listVd);
 		}
@@ -62,26 +57,27 @@ public class Lab6Controller extends HttpServlet {
 		req.getRequestDispatcher("/WEB-INF/views/search/random.jsp").forward(req, resp);
 	}
 
-	
-
-	private void doFindReportByYear(HttpServletRequest req, HttpServletResponse resp)
+	private void doFindFavoriteByYear(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		String method = req.getMethod();
+		System.out.println(method);
+		if (method.equalsIgnoreCase("POST")) {
+			String getYearParam = req.getParameter("year");
+	
+			if (getYearParam != null && !getYearParam.isEmpty()) {
+				Integer getYear = Integer.valueOf(getYearParam);
 
-		String getYearParam = req.getParameter("year");
+				try (EntityManager em = VideoUntils.getEntityManager()) {
+					StoredProcedureQuery query = em.createStoredProcedureQuery("Report.favoriteByYear");
+					query.setParameter("year", getYear);
+					List<Report> listRp = query.getResultList();
+					req.setAttribute("myListRP", listRp);
+				} catch (Exception e) {
+					e.printStackTrace(); 
+				}
+			}
+		}
 
-        if (getYearParam != null && !getYearParam.isEmpty()) {
-            Integer getYear = Integer.valueOf(getYearParam);
-
-            try (EntityManager em = VideoUntils.getEntityManager()) {
-                StoredProcedureQuery query = em.createStoredProcedureQuery("Report.favoriteByYear");
-                query.setParameter("year", getYear);
-                List<Video> listVd = query.getResultList();
-                req.setAttribute("myListRP", listVd);
-            } catch (Exception e) {
-                e.printStackTrace(); // Handle the exception appropriately
-            }
-        }
-
-		req.getRequestDispatcher("/WEB-INF/views/search/report.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/search/favoritebyyear.jsp").forward(req, resp);
 	}
 }

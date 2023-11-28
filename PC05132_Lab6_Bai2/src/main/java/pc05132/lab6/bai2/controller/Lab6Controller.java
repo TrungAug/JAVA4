@@ -15,10 +15,8 @@ import pc05132.lab6.bai2.model.UserAcc;
 import pc05132.lab6.bai2.model.Video;
 import pc05132.lab6.bai2.untils.VideoUntils;
 
-
-@WebServlet({ "/home", "/find/*"})
+@WebServlet({ "/home", "/find/*" })
 public class Lab6Controller extends HttpServlet {
-
 
 	/**
 	 * 
@@ -56,53 +54,21 @@ public class Lab6Controller extends HttpServlet {
 			this.doFindUserByVideoId(req, resp);
 			return;
 		} else if (uri.contains("favorite-or-not")) {
-			String paramFavorite = req.getParameter("favorite");
-			String jpaqlVd;
-			List<Video> listVd;
-			
-			if (paramFavorite != null) {				
-				boolean favorite = Boolean.parseBoolean(req.getParameter("favorite"));
-				
-				if (favorite) {
-					jpaqlVd = "SELECT o FROM Video o WHERE o.favorites IS NOT EMPTY";
-				}else {
-					jpaqlVd = "select o from Video o WHERE o.favorites IS EMPTY";
-				}
-				listVd = VideoUntils.excuteQuey(jpaqlVd, Video.class);						
-				//Check listVd
-//				String kq = favorite ? "THICH" : "KHONG";
-//				for (Video video : listVd) {
-//					System.out.println(video.getTitle() +" "+ kq);
-//				}	
-				resp.setContentType("application/json");
-				Gson gson = new Gson();
-				String jsonData = gson.toJson(listVd);
-				resp.getWriter().write(jsonData);
-				
-			}else {
-				jpaqlVd="SELECT o FROM Video o";
-				listVd = VideoUntils.excuteQuey(jpaqlVd, Video.class);
-				
-			}
-			
-			if(!listVd.isEmpty()) {
-				req.setAttribute("myList", listVd);
-			}
-			req.getRequestDispatcher("/WEB-INF/views/search/favoriteornot.jsp").forward(req, resp);
-			//this.doFindByFavorite(req, resp);
+
+			String jpaqlVd = "select o from Video o";
+			List<Video> listVd = VideoUntils.excuteQuey(jpaqlVd, Video.class);
+			req.setAttribute("myList", listVd);
+			this.doFindByFavorite(req, resp);
 			return;
-		}else if(uri.contains("report")) {
-			String jpql ="Select new Report(o.videox.title,count(o),max(o.likeDate),min(o.likeDate)) From Favorite o Group By o.videox.title"; 
-			List<Report> listRP = VideoUntils.excuteQuey(jpql,Report.class);
-			
+		} else if (uri.contains("report")) {
+			String jpql = "Select new Report(o.videox.title,count(o),max(o.likeDate),min(o.likeDate)) From Favorite o Group By o.videox.title";
+			List<Report> listRP = VideoUntils.excuteQuey(jpql, Report.class);
 			req.setAttribute("myListRP", listRP);
+
 			req.getRequestDispatcher("/WEB-INF/views/search/report.jsp").forward(req, resp);
 			return;
 		}
-		
-		
-		
-		
+
 		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 	}
 
@@ -141,22 +107,25 @@ public class Lab6Controller extends HttpServlet {
 		req.getRequestDispatcher("/WEB-INF/views/search/videoid.jsp").forward(req, resp);
 	}
 
-//	private void doFindByFavorite(HttpServletRequest req, HttpServletResponse resp)
-//			throws ServletException, IOException {
-//
-//		String selectedFavorite = req.getParameter("favorite");
-//		String method = req.getMethod();
-//		if (method.equalsIgnoreCase("POST")) {
-//			boolean favorite = Boolean.parseBoolean(selectedFavorite);
-//			List<Video> listVd = VideoUntils.excuteNamedQuery(null, null,
-//					favorite ? "Video.findVideoFavorite" : "Video.findVideoNotFavorite", Video.class);
-//			if(!listVd.isEmpty()) {
-//				req.setAttribute("listVideoByFavorite", listVd);
-//			}
-//			
-//
-//		}
-//
-//		req.getRequestDispatcher("/WEB-INF/views/search/favoriteornot.jsp").forward(req, resp);
-//	}
+	private void doFindByFavorite(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
+		String method = req.getMethod();
+		System.out.println(method);
+		if (method.equalsIgnoreCase("POST")) {
+			String paramFavorite = req.getParameter("favorite");
+			boolean favorite = Boolean.parseBoolean(paramFavorite);
+			String jpaqlVd = "select o from Video o WHERE o.favorites IS EMPTY";
+			req.setAttribute("mess", "Chưa được yêu thích");
+			if (favorite) {
+				jpaqlVd = "SELECT o FROM Video o WHERE o.favorites IS NOT EMPTY";
+				req.setAttribute("mess", "Được yêu thích");
+			}
+
+			List<Video> listVd = VideoUntils.excuteQuey(jpaqlVd, Video.class);
+			req.setAttribute("myList", listVd);
+		}
+
+		req.getRequestDispatcher("/WEB-INF/views/search/favoriteornot.jsp").forward(req, resp);
+	}
 }

@@ -47,7 +47,7 @@
                                             <a class="nav-link" href="${pageContext.request.contextPath}/find/random">Random</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="${pageContext.request.contextPath}/find/report">Report</a>
+                                            <a class="nav-link" href="${pageContext.request.contextPath}/find/favorite-by-year">Favorite By Year</a>
                                         </li>
                                     </ul>
                                 </div>
