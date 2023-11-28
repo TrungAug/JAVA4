@@ -1,12 +1,17 @@
 package pc05132.lab6.bai4.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.ParameterMode;
 import jakarta.persistence.Query;
 import jakarta.persistence.StoredProcedureParameter;
 import jakarta.persistence.StoredProcedureQuery;
+import jakarta.persistence.TypedQuery;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -35,9 +40,49 @@ public class Lab6Controller extends HttpServlet {
 
 		} else if (uri.contains("favorite-by-year")) {
 
-			String jpql = "Select new Report(o.videox.title,count(o),max(o.likeDate),min(o.likeDate)) From Favorite o Group By o.videox.title";
-			List<Report> listRP = VideoUntils.excuteQuey(jpql, Report.class);
-			req.setAttribute("myListRP", listRP);
+			//String jpql = "Select new Report(o.videox.title,count(o),max(o.likeDate),min(o.likeDate)) From Favorite o Group By o.videox.title";
+			
+			String method = req.getMethod();
+
+			if (method.equalsIgnoreCase("GET")) {
+				String getYearParam = req.getParameter("year");
+
+				if (getYearParam != null && !getYearParam.isEmpty() && getYearParam.matches("\\d+")) {
+					Integer getYear = Integer.valueOf(getYearParam);
+
+					try (EntityManager em = VideoUntils.getEntityManager()) {
+						StoredProcedureQuery query = em.createStoredProcedureQuery("spFavoriteByYear");
+
+						if (getYear != null) {
+							query.registerStoredProcedureParameter("year", Integer.class, ParameterMode.IN);
+							query.setParameter("year", getYear);
+						}
+						List<Report> listRp = new ArrayList<>();
+						;
+						List<Object[]> listO = query.getResultList();
+						// System.out.println(listO.isEmpty());
+
+						if (!listO.isEmpty()) {
+							for (Object[] objects : listO) {
+								String titleString = (String) objects[0];
+								Integer likes = ((Number) objects[1]).intValue();
+								Date newest = (Date) objects[2];
+								Date oldest = (Date) objects[3];
+								Report reporta = new Report(titleString, likes, newest, oldest);
+								listRp.add(reporta);
+							}
+							req.setAttribute("myListRP", listRp);
+						} else {
+							req.setAttribute("mess", "Không có video được thích trong năm " + getYear);
+						}
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			
+			
 
 			this.doFindFavoriteByYear(req, resp);
 			return;
@@ -60,20 +105,41 @@ public class Lab6Controller extends HttpServlet {
 	private void doFindFavoriteByYear(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String method = req.getMethod();
-		System.out.println(method);
+
 		if (method.equalsIgnoreCase("POST")) {
 			String getYearParam = req.getParameter("year");
-	
-			if (getYearParam != null && !getYearParam.isEmpty()) {
+
+			if (getYearParam != null && !getYearParam.isEmpty() && getYearParam.matches("\\d+")) {
 				Integer getYear = Integer.valueOf(getYearParam);
 
 				try (EntityManager em = VideoUntils.getEntityManager()) {
-					StoredProcedureQuery query = em.createStoredProcedureQuery("Report.favoriteByYear");
-					query.setParameter("year", getYear);
-					List<Report> listRp = query.getResultList();
-					req.setAttribute("myListRP", listRp);
+					StoredProcedureQuery query = em.createStoredProcedureQuery("spFavoriteByYear");
+
+					if (getYear != null) {
+						query.registerStoredProcedureParameter("year", Integer.class, ParameterMode.IN);
+						query.setParameter("year", getYear);
+					}
+					List<Report> listRp = new ArrayList<>();
+					;
+					List<Object[]> listO = query.getResultList();
+					// System.out.println(listO.isEmpty());
+
+					if (!listO.isEmpty()) {
+						for (Object[] objects : listO) {
+							String titleString = (String) objects[0];
+							Integer likes = ((Number) objects[1]).intValue();
+							Date newest = (Date) objects[2];
+							Date oldest = (Date) objects[3];
+							Report reporta = new Report(titleString, likes, newest, oldest);
+							listRp.add(reporta);
+						}
+						req.setAttribute("myListRP", listRp);
+					} else {
+						req.setAttribute("mess", "Không có video được thích trong năm " + getYear);
+					}
+
 				} catch (Exception e) {
-					e.printStackTrace(); 
+					e.printStackTrace();
 				}
 			}
 		}

@@ -36,7 +36,7 @@
 								<h3>${message}</h3>
 								<select class="form-select form-select-lg mb-3"
 									aria-label=".form-select-lg example" name="year" id="yearSelect">
-									<option value="2023" selected>2023</option>
+									<option value="2023">2023</option>
 									<option value="2022">2022</option>
 									<option value="2021">2021</option>
 									<option value="2020">2020</option>
@@ -54,7 +54,7 @@
 					<div class="card">
 						<div class="card-header">
 							<div class="card-title">
-								<h3>Danh sách video</h3>
+								<h3>Danh sách video ${mess}</h3>
 							</div>
 						</div>
 						<div class="card-body">
@@ -72,7 +72,7 @@
 									<tbody class="table-group-divider">
 										<c:forEach var="vd" items="${myListRP}">
 											<tr>
-												<td>${vd.group}</td>
+												<td>${vd.group}</td>	
 												<td>${vd.likes}</td>
 												<td>${vd.newest}</td>
 												<td>${vd.oldest}</td>

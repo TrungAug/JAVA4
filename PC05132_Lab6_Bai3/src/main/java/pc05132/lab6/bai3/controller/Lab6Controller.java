@@ -142,6 +142,8 @@ public class Lab6Controller extends HttpServlet {
 				
 				if(listVd.isEmpty()) {
 					req.setAttribute("mess","Không có video trong tháng " +months.toString());
+				}else {
+					req.setAttribute("mess","được thích trong tháng " +months.toString());
 				}
 				
 				req.setAttribute("myListByMonth", listVd);
