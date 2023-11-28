@@ -54,6 +54,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="${pageContext.request.contextPath}/find/favorite-or-not">Find By Favorite Or Not</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="${pageContext.request.contextPath}/find/report">Report</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

@@ -61,7 +61,7 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table align-middle table-dark table-hover">
+								<table id="videoTable" class="table align-middle table-dark table-hover">
 									<thead>
 										<tr>
 											<th scope="col">Id</th>
@@ -100,7 +100,8 @@
 					favorite : isFavorite
 				}, function(data) {
 					// Xử lý kết quả từ servlet nếu cần
-					console.log(data);
+					console.log("data from jsp: "data);
+					
 				});
 			});
 		});
