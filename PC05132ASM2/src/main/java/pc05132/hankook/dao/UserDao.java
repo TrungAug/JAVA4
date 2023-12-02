@@ -3,6 +3,7 @@ package pc05132.hankook.dao;
 import java.util.List;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import pc05132.hankook.entity.User;
 import pc05132.hankook.untils.HankookUntils;
 
@@ -47,9 +48,32 @@ public class UserDao {
 		}
 		return user;
 	}
+	
+	
+	public User remove(String id) {
+		User entity = this.findUserById(id);
+		try {
+			em.getTransaction().begin();
+			em.remove(entity);
+			em.getTransaction().commit();
+			System.out.println("Delete Successful: UserDAO update function");
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			e.printStackTrace();
+			System.out.println("Delete Failed: UserDAO update function");
+		}
+		return entity;
+
+	}
 
 	public User findUserById(String id) {
 		return em.find(User.class, id);
 	}
 
+	public List<User> findAll() {
+		String jpql = "Select o from User o";
+		TypedQuery<User> query = em.createQuery(jpql, User.class);
+		List<User> list = query.getResultList();
+		return list;
+	}
 }

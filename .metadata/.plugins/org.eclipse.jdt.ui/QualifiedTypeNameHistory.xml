@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="jakarta.persistence.TemporalType"/>
     <fullyQualifiedTypeName name="pc05132.account.database.DatabaseHelper"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
@@ -13,7 +12,6 @@
     <fullyQualifiedTypeName name="pc05132.useraccess.entity.Account"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSessionListener"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContextEvent"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.nio.file.Files"/>
     <fullyQualifiedTypeName name="java.nio.file.Path"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSessionEvent"/>
@@ -35,7 +33,6 @@
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.ConvertUtils"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.converters.DateConverter"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContext"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="pc05132.lab7.bai3.filter.RRSharer"/>
@@ -58,6 +55,9 @@
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebListener"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContextListener"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="pc05132.hankook.untils.HankookUntils"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.User"/>
     <fullyQualifiedTypeName name="pc05132.hankook.dao.UserDao"/>
 </qualifiedTypeNameHistroy>
