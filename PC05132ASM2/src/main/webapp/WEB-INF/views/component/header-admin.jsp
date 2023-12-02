@@ -61,9 +61,7 @@
                                                 <li>
                                                     <hr class="dropdown-divider">
                                                 </li>
-                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/sign-in">Sign in</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/sign-up">Sign up</a>
+                                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user-controller/sign-out">Sign out</a>
                                                 </li>
                                             </ul>
                                         </li>

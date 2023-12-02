@@ -33,6 +33,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 import pc05132.hankook.dao.UserDao;
 import pc05132.hankook.entity.User;
@@ -56,7 +57,7 @@ public class HomeController extends HttpServlet {
 		} else if (uri.contains("sign-up")) {
 			this.doSignUp(req, resp);
 			return;
-		} else if (uri.contains("sign-in")) {
+		} else if (uri.contains("sign-in") || uri.contains("side-bar-sign-in")) {
 			String usName = CookiesUntils.get("userNamec", req);
 			String passW =CookiesUntils.get("passWordc", req);
 			req.setAttribute("usernameC", usName);
@@ -65,6 +66,9 @@ public class HomeController extends HttpServlet {
 			return;
 		} else if (uri.contains("forget-pass")) {
 			this.doForgetPassword(req, resp);
+			return;
+		}else if(uri.contains("sign-out")) {
+			this.doSignOut(req, resp);
 			return;
 		}
 		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
@@ -194,7 +198,12 @@ public class HomeController extends HttpServlet {
 					int hours = remember==null?0:1; //1 phút
 					CookiesUntils.add("userNamec",userName, hours, resp);
 					CookiesUntils.add("passWordc",passWord, hours, resp);
-					//update: sử dụng thư viện Xcookie
+					
+					//lưu đối tương đăng nhập vào session
+					
+					req.getSession().setAttribute("userLogin", checkUserExists);
+					
+					
 					if(checkUserExists.isAdmin()) {
 						req.setAttribute("mess", "Sign In Successfully as Admin");
 						resp.sendRedirect(req.getContextPath()+"/user/admin");
@@ -275,5 +284,10 @@ public class HomeController extends HttpServlet {
 
 		req.getRequestDispatcher("/WEB-INF/views/account/forget-pass.jsp").forward(req, resp);
 	}
-
+	
+	private void doSignOut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession();
+		session.invalidate();
+		resp.sendRedirect(req.getContextPath()+"/home");
+	}
 }
