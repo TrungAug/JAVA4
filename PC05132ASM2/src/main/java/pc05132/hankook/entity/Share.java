@@ -14,52 +14,50 @@ import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(
-		name="shares",
-		uniqueConstraints = {
-				@UniqueConstraint(columnNames = {
-						"user_id_fk_share","product_id_fk_share"
-				})
-		}
-		)
+@Table(name = "shares")
 public class Share {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idShare;
 	@Temporal(TemporalType.DATE)
-	private Date dateShare=new Date(System.currentTimeMillis());
+	private Date dateShare = new Date(System.currentTimeMillis());
 	@ManyToOne
 	@JoinColumn(name = "user_id_fk_share")
 	private User userss;
 	@ManyToOne
 	@JoinColumn(name = "product_id_fk_share")
 	private Product product;
+
 	public int getIdShare() {
 		return idShare;
 	}
+
 	public void setIdShare(int idShare) {
 		this.idShare = idShare;
 	}
+
 	public Date getDateShare() {
 		return dateShare;
 	}
+
 	public void setDateShare(Date dateShare) {
 		this.dateShare = dateShare;
 	}
-	
+
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+
 	public User getUserss() {
 		return userss;
 	}
+
 	public void setUserss(User userss) {
 		this.userss = userss;
 	}
+
 	public Product getProduct() {
 		return product;
 	}
-	
-	
-	
+
 }

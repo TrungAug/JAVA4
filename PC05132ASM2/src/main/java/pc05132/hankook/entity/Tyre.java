@@ -4,9 +4,13 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
+@NamedQuery(
+		name = "Tyre.FindAll",
+		query="from Tyre"
+		)
 @Entity
 @Table(name = "tyres")
 public class Tyre {
@@ -14,7 +18,7 @@ public class Tyre {
 	private String idTyre;
 	private String nameTyre;
 	@OneToMany(mappedBy = "tyre")
-	List<Product> products;
+	List<RelProductTyre> detailTyres;
 	public String getIdTyre() {
 		return idTyre;
 	}
@@ -27,11 +31,14 @@ public class Tyre {
 	public void setNameTyre(String nameTyre) {
 		this.nameTyre = nameTyre;
 	}
-	public List<Product> getProducts() {
-		return products;
+	public List<RelProductTyre> getDetailTyres() {
+		return detailTyres;
 	}
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setDetailTyres(List<RelProductTyre> detailTyres) {
+		this.detailTyres = detailTyres;
 	}
+	
+	
+	
 	
 }

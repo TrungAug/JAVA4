@@ -3,6 +3,7 @@ package pc05132.hankook.entity;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -11,7 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "products", uniqueConstraints = { @UniqueConstraint(columnNames = { "tyre_id_fk_product" }) })
+@Table(name = "products")
 public class Product {
 	@Id
 	private String idPro;
@@ -20,16 +21,18 @@ public class Product {
 	private Integer buys = 0;
 	private Boolean active = true;
 
-	@ManyToOne
-	@JoinColumn(name = "tyre_id_fk_product")
-	private Tyre tyre;
-
+	
+	@OneToMany(mappedBy = "product")
+	List<RelProductTyre> detailProducts;
 	@OneToMany(mappedBy = "product")
 	List<Image> images;
 	@OneToMany(mappedBy = "product")
 	List<Like> likes;
 	@OneToMany(mappedBy = "product")
 	List<Share> shares;
+	@OneToMany(mappedBy = "product")
+	List<Size> sizes;
+	
 	public String getIdPro() {
 		return idPro;
 	}
@@ -60,11 +63,12 @@ public class Product {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-	public Tyre getTyre() {
-		return tyre;
+	
+	public List<RelProductTyre> getDetailProducts() {
+		return detailProducts;
 	}
-	public void setTyre(Tyre tyre) {
-		this.tyre = tyre;
+	public void setDetailProducts(List<RelProductTyre> detailProducts) {
+		this.detailProducts = detailProducts;
 	}
 	public List<Image> getImages() {
 		return images;
@@ -83,6 +87,12 @@ public class Product {
 	}
 	public void setShares(List<Share> shares) {
 		this.shares = shares;
+	}
+	public List<Size> getSizes() {
+		return sizes;
+	}
+	public void setSizes(List<Size> sizes) {
+		this.sizes = sizes;
 	}
 	
 	

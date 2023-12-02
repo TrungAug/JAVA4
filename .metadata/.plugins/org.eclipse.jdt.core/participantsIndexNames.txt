@@ -23,10 +23,10 @@ D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsear
 \PC05132_Lab2_Bai4\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4246272148.index
 \Demo4\src\main\java
-D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3079609171.index
-\PC05132_Lab7_Bai2\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2985738484.index
 \PC05132ASM3\src\main\java
+D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3079609171.index
+\PC05132_Lab7_Bai2\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1440287617.index
 \PC05132_Lab2_Bai3\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1119165096.index
@@ -141,6 +141,8 @@ D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsear
 \PC05132_Lab6_Bai2\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4245411658.index
 \PC05132_Lab1_Bai3\src\main\java
+D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4090485417.index
+\LayOutWebProject\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3817165805.index
 \Demo6_Cooikie\src\main\java
 D:\5. FALL 2023\Java4\BaiLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2665760292.index

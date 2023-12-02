@@ -53,6 +53,16 @@ public class HankookUntils implements ServletContextListener {
 		return listT;
 	}
 	
+	public static <T> List<T> excuteNamedQueryNoParam(String namedQueryName,
+			Class<T> myClass) {
+		List<T> listT = new ArrayList<>();
+		try (EntityManager em = HankookUntils.getFactory().createEntityManager()) {
+			TypedQuery<T> namedQuery = em.createNamedQuery(namedQueryName, myClass);
+			listT = namedQuery.getResultList();
+
+		}
+		return listT;
+	}
 	
 	
 	

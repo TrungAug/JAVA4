@@ -45,7 +45,7 @@ public class StaffController extends HttpServlet {
 		Part photo = req.getPart("photo_file");
 		File photoFile = new File(dir,photo.getSubmittedFileName());
 		photo.write(photoFile.getAbsolutePath());
-	
+		System.out.println(photoFile.getName());
 		
 		try {
 			DateTimeConverter dtc = new DateConverter(new Date());

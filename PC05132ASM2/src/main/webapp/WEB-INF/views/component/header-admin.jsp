@@ -68,10 +68,10 @@
                                        
                                         <!-- Nếu đăng nhập thành công và user là admin thì hiển thị menu -->
                                         <li class="nav-item">
-                                            <a class="nav-link" href="${pageContext.request.contextPath}/editor">Editor</a>
+                                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/editor-product">Editor Product</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="${pageContext.request.contextPath}/editoruser">Editor User</a>
+                                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/editor-user">Editor User</a>
                                         </li>
                                     </ul>
                                 </div>

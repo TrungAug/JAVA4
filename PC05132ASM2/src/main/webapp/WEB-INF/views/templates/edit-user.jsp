@@ -19,6 +19,7 @@
 
 <body class="d-flex flex-column justify-content-between"
 	style="height: 100vh;">
+	<%@ include file="/WEB-INF/views/component/header-admin.jsp"%>
 	<div class="container-fluid">
 
 		<main class="main">
@@ -91,7 +92,8 @@
 										<div class="form-outline mb-4">
 											<label class="form-label" for="editUserModalEmail">Birthday</label>
 											<input type="date" id="registerModalDate"
-												class="form-control" name="birthDay" value="${form.birthDay}" required>
+												class="form-control" name="birthDay"
+												value="${form.birthDay}" required>
 										</div>
 
 										<div class="col-lg-12 d-flex flex-row justify-content-center">
@@ -115,7 +117,8 @@
 										<button formaction="${url}/create" class="btn btn-primary m-2">Create</button>
 										<button formaction="${url}/update" class="btn btn-primary m-2">Update</button>
 										<button formaction="${url}/delete" class="btn btn-primary m-2">Delete</button>
-										<button formaction="${url}/editor-user" class="btn btn-primary m-2">Reset</button>
+										<button formaction="${url}/editor-user"
+											class="btn btn-primary m-2">Reset</button>
 									</div>
 								</form>
 							</div>
@@ -161,7 +164,7 @@
 				</div>
 			</div>
 		</main>
-
+		<%@ include file="/WEB-INF/views/component/footer.jsp"%>
 	</div>
 	<script>
 		setTimeout(function() {

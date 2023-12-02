@@ -24,19 +24,7 @@ public class EditUserController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-//	@Override
-//	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		
-//		String jpaql = "select o from User o";
-//		List<User> listUs = HankookUntils.excuteQuey(jpaql, User.class);
-//		req.setAttribute("listUs", listUs);
-//		req.getRequestDispatcher("/WEB-INF/views/templates/edit-user.jsp").forward(req, resp);
-//	}
-//	
-//	@Override
-//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		req.getRequestDispatcher("/WEB-INF/views/templates/edit-user.jsp").forward(req, resp);
-//	}
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
@@ -54,7 +42,7 @@ public class EditUserController extends HttpServlet {
 					ConvertUtils.register(dtc, Date.class);
 					
 					BeanUtils.populate(editUser, req.getParameterMap());
-					System.out.println(editUser.toString());
+					//System.out.println(editUser.toString());
 					UserDao.getInstance().create(editUser);
 					req.setAttribute("message", "Insert Success");
 				} catch (Exception e) {

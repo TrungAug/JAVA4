@@ -18,5 +18,6 @@
   <module moduleId="org.eclipse.jst.jee.server:PC05132_Lab3_Bai1" serverId="apache-tomcat-10.1.12 at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:PC05132_Lab3_Bai2" serverId="apache-tomcat-10.1.12 at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:PC05132_Lab6_Bai2" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:LayOutWebProject" serverId="Tomcat v10.1 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:PC05132_Lab6_Bai4" serverId="Tomcat v10.1 Server at localhost"/>
 </modules>

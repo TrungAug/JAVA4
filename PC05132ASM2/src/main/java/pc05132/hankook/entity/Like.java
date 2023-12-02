@@ -14,8 +14,7 @@ import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "likes", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "user_id_fk_like", "product_id_fk_like" }) })
+@Table(name = "likes")
 public class Like {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
