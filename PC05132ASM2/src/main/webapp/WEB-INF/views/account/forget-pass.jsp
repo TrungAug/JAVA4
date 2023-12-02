@@ -45,12 +45,12 @@
 											<div class="form-outline mb-4">
 												<label class="form-label" for="forgotPasswordEmail">Email
 													Address</label> <input type="email" id="forgotPasswordEmail"
-													class="form-control" name="email" required>
+													class="form-control" name="emailTo" required>
 											</div>
 										</div>
 									</div>
 									<button class="btn btn-primary btn-block mb-4"
-										id="registerButton">Retrieve</button>
+										id="forgetPasswordButton">Retrieve</button>
 								</form>
 							</div>
 						</div>

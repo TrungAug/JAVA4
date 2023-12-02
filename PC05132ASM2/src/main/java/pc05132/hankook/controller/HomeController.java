@@ -1,22 +1,39 @@
 package pc05132.hankook.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Date;
+import java.util.Properties;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.commons.beanutils.converters.DateTimeConverter;
 
+import jakarta.activation.DataHandler;
+import jakarta.activation.FileDataSource;
+import jakarta.mail.Authenticator;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Multipart;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.AddressException;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
+import jakarta.mail.internet.MimeMessage.RecipientType;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import pc05132.hankook.dao.UserDao;
 import pc05132.hankook.entity.User;
 import pc05132.hankook.untils.CookiesUntils;
@@ -54,10 +71,60 @@ public class HomeController extends HttpServlet {
 	}
 
 	private void doUpdate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//Filter cho chức năng update, kiểm tra UserLogin nếu == null . không cho truy cập đường dẫn
+		// "/user-controller/update-account"
+		
 		String method = req.getMethod();
-		req.setAttribute("mess", "Welcome Edit profile");
+		req.setAttribute("mess", "Welcome! Edit your profile and please enter the correct username first.!");
 		if (method.equalsIgnoreCase("POST")) {
-			System.out.println("Thuc hien chuc nang Edit o day");
+			String id = req.getParameter("idUs");
+			String admin = req.getParameter("admin");			
+			User checkUserExists = UserDao.getInstance().findUserById(id);
+			if (checkUserExists != null) {
+				try {
+					String dateStringInput = req.getParameter("birthDay");
+					SimpleDateFormat fmtDate = new SimpleDateFormat("yyyy-MM-dd"); // Định dạng của ngày tháng
+					Date datePare = fmtDate.parse(dateStringInput);
+					java.sql.Date userDate = new java.sql.Date(datePare.getTime());
+					LocalDate birthDay = userDate.toLocalDate();
+					LocalDate currentDate = LocalDate.now();
+					Period agePeriod = Period.between(birthDay, currentDate);
+
+					int age = agePeriod.getYears();
+
+					if (age < 18) {
+						req.setAttribute("mess", "User must be at least 18 years old.");
+					} else {
+						try {
+							DateTimeConverter dtc = new DateConverter(new Date());
+							dtc.setPattern("MM/dd/yyyy");
+							ConvertUtils.register(dtc, Date.class);
+							User updateUser = new User();
+							
+							if(admin==null) {
+								updateUser.setAdmin(false);
+							}else {
+								updateUser.setAdmin(true);
+							}
+							
+									
+							BeanUtils.populate(updateUser, req.getParameterMap());
+							UserDao.getInstance().update(updateUser);
+							req.setAttribute("mess", "Update was successful.");
+						} catch (Exception e) {
+							req.setAttribute("mess", "Update was fail.");
+							e.printStackTrace();
+						}
+					}
+
+				} catch (Exception e) {
+					req.setAttribute("mess", "Please double-check the information.");
+					e.printStackTrace();
+				}
+			} else {
+				req.setAttribute("mess", "The username does not exist. Please enter it again.");
+			}
+
 		}
 
 		req.getRequestDispatcher("/WEB-INF/views/account/update-account.jsp").forward(req, resp);
@@ -82,7 +149,7 @@ public class HomeController extends HttpServlet {
 					int age = agePeriod.getYears();
 
 					if (age < 18) {
-						req.setAttribute("mess", "Users must be at least 18 years old.");
+						req.setAttribute("mess", "User must be at least 18 years old.");
 					} else {
 						try {
 							DateTimeConverter dtc = new DateConverter(new Date());
@@ -127,14 +194,17 @@ public class HomeController extends HttpServlet {
 					int hours = remember==null?0:1; //1 phút
 					CookiesUntils.add("userNamec",userName, hours, resp);
 					CookiesUntils.add("passWordc",passWord, hours, resp);
-										
+					//update: sử dụng thư viện Xcookie
 					if(checkUserExists.isAdmin()) {
 						req.setAttribute("mess", "Sign In Successfully as Admin");
+						resp.sendRedirect(req.getContextPath()+"/user/admin");
+						return;
 						
-						//update code của user 
 					}else {
 						req.setAttribute("mess", "Sign In Successfully as Customer");
-						//update code của customer
+						
+						resp.sendRedirect(req.getContextPath()+"/user/customer");
+						return;
 					}
 					
 				}else {
@@ -143,7 +213,7 @@ public class HomeController extends HttpServlet {
 			}
 
 		}
-
+		
 		req.getRequestDispatcher("/WEB-INF/views/account/sign-in.jsp").forward(req, resp);
 	}
 
@@ -152,7 +222,55 @@ public class HomeController extends HttpServlet {
 		String method = req.getMethod();
 		req.setAttribute("mess", "Welcome To Forget Password");
 		if (method.equalsIgnoreCase("POST")) {
-			System.out.println("Thuc hien chuc nang ForgetPassword o day");
+			String emailTo = req.getParameter("emailTo");
+			String username = req.getParameter("username");
+
+			User user = UserDao.getInstance().findUserById(username);
+			if(user==null) {
+				req.setAttribute("mess", "Wrong Username. Please input again!");
+			}else {
+				if(user.getEmail().equals(emailTo)) {
+					String emailText = "Your Password is: "+user.getPassWord();
+					
+					Properties props = new Properties();
+					props.setProperty("mail.smtp.auth", "true");
+					props.setProperty("mail.smtp.starttls.enable", "true");
+					props.setProperty("mail.smtp.host", "smtp.gmail.com");
+					props.setProperty("mail.smtp.port", "587");
+					
+					String emailFrom = "trung2894@gmail.com";
+					String password = "ludqafyeukrhuiuu";
+					 
+					
+					Session session = Session.getInstance(props, new Authenticator() {
+						protected PasswordAuthentication getPasswordAuthentication() {
+							return new PasswordAuthentication(emailFrom, password);
+						}
+					});
+					
+					try {
+						MimeMessage message = new MimeMessage(session);
+						message.setFrom(new InternetAddress(emailFrom));
+						message.setRecipients(RecipientType.TO, emailTo);
+						message.setSubject("Password Recovery Instruction");
+						message.setText(emailText, "UTF-8", "html");
+						message.setReplyTo(null);
+	
+						Transport.send(message);
+						req.setAttribute("mess", "The password has been sent to your email. Please check it.!");
+					} catch (AddressException e) {
+						e.printStackTrace();
+						req.setAttribute("mess", "Email delivery failed!");
+					} catch (MessagingException e) {
+						e.printStackTrace();
+						req.setAttribute("mess", "Email delivery failed!");
+					}
+					
+					
+				}else {
+					req.setAttribute("mess", "Wrong Email. Please input again!");
+				}
+			}		
 		}
 
 		req.getRequestDispatcher("/WEB-INF/views/account/forget-pass.jsp").forward(req, resp);

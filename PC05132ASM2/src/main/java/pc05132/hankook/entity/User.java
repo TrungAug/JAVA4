@@ -92,6 +92,12 @@ public class User {
 	public void setLikes(List<Like> likes) {
 		this.likes = likes;
 	}
+
+	@Override
+	public String toString() {
+		return "User [idUs=" + idUs + ", fullName=" + fullName + ", passWord=" + passWord + ", email=" + email
+				+ ", birthDay=" + birthDay + ", admin=" + admin + ", shares=" + shares + ", likes=" + likes + "]";
+	}
 	
 	
 }

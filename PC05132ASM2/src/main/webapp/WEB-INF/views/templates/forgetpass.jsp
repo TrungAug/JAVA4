@@ -25,12 +25,12 @@
                                 <h2 class="fw-bold mb-4" style="color: #0d6efd;">
                                     <strong>FORGOT PASSWORD</strong>                                
                                 </h2>
-                                <form name="formForget">
+                                <form name="formForget" action="">
                                     <div class="row">                                        
                                         <div class="col-md-12 mb-4">
                                             <div class="form-outline">
                                                 <label class="form-label" for="forgotPasswordUsername">Username</label>
-                                                <input type="text" id="forgotPasswordUsername" name="forgotPasswordInputUsername"
+                                                <input type="text" id="forgotPasswordUsername" name="username"
                                                     class="form-control" required>
                                             </div>
                                         </div>                                    
@@ -38,11 +38,11 @@
                                             <div class="form-outline mb-4">
                                                 <label class="form-label" for="forgotPasswordEmail">Email Address</label>
                                                 <input type="email" id="forgotPasswordEmail" class="form-control"
-                                                    name="forgotPasswordInputEmail" required>
+                                                    name="emailTo" required>
                                             </div>
                                         </div>
                                     </div>                              
-                                    <button type="button" class="btn btn-primary btn-block mb-4" id="registerButton">
+                                    <button class="btn btn-primary btn-block mb-4" id="registerButton">
                                         Retrieve
                                     </button>
                                 </form>                             

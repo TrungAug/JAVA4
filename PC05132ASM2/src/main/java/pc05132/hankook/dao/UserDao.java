@@ -7,7 +7,7 @@ import pc05132.hankook.entity.User;
 import pc05132.hankook.untils.HankookUntils;
 
 public class UserDao {
-	private EntityManager em = HankookUntils.getEntityManager();
+	private EntityManager em = HankookUntils.getFactory().createEntityManager();
 
 	@Override
 	protected void finalize() throws Throwable {
@@ -39,11 +39,11 @@ public class UserDao {
 			em.getTransaction().begin();
 			em.merge(user);
 			em.getTransaction().commit();
-			System.out.println("Insert Successful: UserDAO update function");
+			System.out.println("Update Successful: UserDAO update function");
 		} catch (Exception e) {
 			em.getTransaction().rollback();
 			e.printStackTrace();
-			System.out.println("Insert Failed: UserDAO update function");
+			System.out.println("Update Failed: UserDAO update function");
 		}
 		return user;
 	}

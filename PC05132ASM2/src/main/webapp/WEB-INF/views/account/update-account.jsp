@@ -75,9 +75,9 @@
 									</div>
 									<div class="form-check d-flex justify-content-center mb-4">
 										<input class="form-check-input me-2" type="checkbox"
-											value="false" id="editProfileRole" name="admin"
-											value="${editAcc.admin}" /> <label class="form-check-label"
-											for="editProfileRole"> Admin? </label>
+											id="editProfileRole" name="admin" /> <label
+											class="form-check-label" for="editProfileRole">
+											Admin? </label>
 									</div>
 									<button type="submit" class="btn btn-primary btn-block mb-4"
 										id="editProfileButton">Update</button>
@@ -95,7 +95,7 @@
 		setTimeout(
 				function() {
 					document.getElementById('messageInfoEditProfile').style.display = 'none';
-				}, 2000);
+				}, 4000);
 	</script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

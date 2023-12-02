@@ -57,7 +57,7 @@
 											Password? </label>
 									</div>
 									<button class="btn btn-primary btn-block mb-4"
-										id="registerButton">Sign in</button>
+										id="signInButton">Sign in</button>
 								</form>
 								<div class="mt-4">
 									<p>Or sign in with:</p>

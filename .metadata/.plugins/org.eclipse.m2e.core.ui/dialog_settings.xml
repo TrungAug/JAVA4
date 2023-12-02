@@ -2,6 +2,11 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="PC05132_Lab7_Bai1"/>
+			<item value="UserAccountWebProject"/>
+			<item value="CounterWeb"/>
+			<item value="AccountMangaeWebProject"/>
+			<item value="HiNoApp"/>
 			<item value="PC05132_Lab6_Bai2"/>
 			<item value="HankookWebsite"/>
 			<item value="PC05132ASM2"/>
@@ -12,17 +17,17 @@
 			<item value="PC05132_Lab5_Bai2"/>
 			<item value="PC05132_Lab5_Bai1"/>
 			<item value="Demo8"/>
-			<item value="PC05132_Lab4_Bai33"/>
-			<item value="Demo77"/>
-			<item value="PC05132ASM"/>
-			<item value="Hankook"/>
-			<item value="Demo7"/>
 		</list>
 		<list key="name">
 			<item value="Hankook Website"/>
 			<item value="Demo6_Cooikie"/>
 		</list>
 		<list key="artifactId">
+			<item value="PC05132_Lab7_Bai1"/>
+			<item value="UserAccountWebProject"/>
+			<item value="CounterWeb"/>
+			<item value="AccountMangaeWebProject"/>
+			<item value="HiNoApp"/>
 			<item value="PC05132_Lab6_Bai2"/>
 			<item value="HankookWebsite"/>
 			<item value="PC05132ASM2"/>
@@ -33,11 +38,6 @@
 			<item value="PC05132_Lab5_Bai2"/>
 			<item value="PC05132_Lab5_Bai1"/>
 			<item value="Demo8"/>
-			<item value="PC05132_Lab4_Bai33"/>
-			<item value="Demo77"/>
-			<item value="PC05132ASM"/>
-			<item value="Hankook"/>
-			<item value="Demo7"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
