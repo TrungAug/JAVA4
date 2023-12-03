@@ -22,15 +22,15 @@ public class Product {
 	private Boolean active = true;
 
 	
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	List<RelProductTyre> detailProducts;
 	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	List<Image> images;
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	List<Like> likes;
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	List<Share> shares;
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	List<Size> sizes;
 	
 	public String getIdPro() {
