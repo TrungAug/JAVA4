@@ -24,7 +24,7 @@ public class Product {
 	
 	@OneToMany(mappedBy = "product")
 	List<RelProductTyre> detailProducts;
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	List<Image> images;
 	@OneToMany(mappedBy = "product")
 	List<Like> likes;

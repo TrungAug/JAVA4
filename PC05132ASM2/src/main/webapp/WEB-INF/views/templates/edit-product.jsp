@@ -70,13 +70,13 @@
                                     </div>
                                     <div class="col">
                                         <a type="button" class="text-info">
-                                            Delete
+                                            Delete product
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <a type="button" class="text-info" data-bs-toggle="modal"
+                                        <a type="button" href="${url}/create-edit" class="text-info" data-bs-toggle="modal"
                                             data-bs-target="#editorEditProductModal">
-                                            Edit
+                                            Edit product
                                         </a>
                                     </div>
                                 </div>

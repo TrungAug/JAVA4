@@ -3,6 +3,7 @@ package pc05132.hankook.entity;
 import javax.annotation.processing.Generated;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,7 +24,7 @@ public class Size {
 	private String Width;
 	private String Profile;
 	private String Diameter;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id_fk_size")
 	private Product product;
 

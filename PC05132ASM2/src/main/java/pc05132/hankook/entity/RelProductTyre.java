@@ -1,6 +1,8 @@
 package pc05132.hankook.entity;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,8 +29,8 @@ public class RelProductTyre {
 	@JoinColumn(name = "id_tyre")
 	private Tyre tyre;
 	
-	@Temporal(TemporalType.DATE)
-	private Date dateLog = new Date(System.currentTimeMillis());
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dateLog = new Date();
 
 	public int getId() {
 		return id;
@@ -61,5 +63,7 @@ public class RelProductTyre {
 	public void setDateLog(Date dateLog) {
 		this.dateLog = dateLog;
 	}
+
+	
 	
 }

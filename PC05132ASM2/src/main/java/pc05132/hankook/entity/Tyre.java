@@ -37,8 +37,9 @@ public class Tyre {
 	public void setDetailTyres(List<RelProductTyre> detailTyres) {
 		this.detailTyres = detailTyres;
 	}
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Tyre [idTyre=" + idTyre + ", nameTyre=" + nameTyre + ", detailTyres=" + detailTyres + "]";
+	}
 	
 }

@@ -3,6 +3,7 @@ package pc05132.hankook.entity;
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,10 +22,10 @@ public class Share {
 	private int idShare;
 	@Temporal(TemporalType.DATE)
 	private Date dateShare = new Date(System.currentTimeMillis());
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id_fk_share")
 	private User userss;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id_fk_share")
 	private Product product;
 
