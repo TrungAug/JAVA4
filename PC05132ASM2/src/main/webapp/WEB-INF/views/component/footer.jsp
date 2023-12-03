@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <footer style="background-color: #000; color: #fff;"
-			class="text-center text-lg-start">
+			class="text-center text-lg-start mt-3">
 			<!-- Section: Social media -->
 			<section
 				class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

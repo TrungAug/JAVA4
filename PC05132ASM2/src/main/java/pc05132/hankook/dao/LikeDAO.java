@@ -81,4 +81,12 @@ public class LikeDAO {
 	public Like findLikeById(String id) {
 		return em.find(Like.class, id);
 	}
+	
+	public Long countLikesByProductId(String productId) {
+	    String jpql = "SELECT COUNT(l) FROM Like l WHERE l.product.id = :productId";
+	    TypedQuery<Long> query = em.createQuery(jpql, Long.class);
+	    query.setParameter("productId", productId);
+
+	    return query.getSingleResult();
+	}
 } 

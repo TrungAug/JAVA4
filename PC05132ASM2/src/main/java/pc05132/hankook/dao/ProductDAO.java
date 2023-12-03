@@ -32,6 +32,14 @@ public class ProductDAO {
 		return list;
 	}
 	
+	public List<Product> findAllActive(boolean active){
+		String jpql = "Select o from Product o where o.active=:param";
+		TypedQuery<Product> query = em.createQuery(jpql, Product.class);
+		query.setParameter("param", active);
+		List<Product> list = query.getResultList();
+		return list;
+	}
+	
 	public Product create(Product o) {
 		try {
 			em.getTransaction().begin();

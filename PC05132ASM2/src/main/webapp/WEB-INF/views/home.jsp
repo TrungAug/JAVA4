@@ -22,102 +22,13 @@
 		<%@ include file="/WEB-INF/views/component/header.jsp"%>
 
 		<main class="main">
-			<div id="sliderCarouse" class="carousel slide mb-3"
-				data-bs-ride="carousel">
-				<div class="carousel-indicators">
-					<button type="button" data-bs-target="#sliderCarouse"
-						data-bs-slide-to="0" class="active" aria-current="true"
-						aria-label="Slide 1"></button>
-					<button type="button" data-bs-target="#sliderCarouse"
-						data-bs-slide-to="1" aria-label="Slide 2"></button>
-					<button type="button" data-bs-target="#sliderCarouse"
-						data-bs-slide-to="2" aria-label="Slide 3"></button>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active" data-bs-interval="3000">
-						<video class="img-fluid" autoplay loop muted>
-							<source
-								src="https://asset.hankooktire.com/content/dam/hankooktire/global/video/main/LC_uk_en_iON_2_1920_970_1209.mp4"
-								type="video/mp4" />
-						</video>
-					</div>
-					<div class="carousel-item" data-bs-interval="3000">
-						<video class="img-fluid" autoplay loop muted>
-							<source
-								src="https://asset.hankooktire.com/content/dam/hankooktire/global/video/main/LC_febrandfilm_1920_970_230418.mp4"
-								type="video/mp4" />
-						</video>
-					</div>
-					<div class="carousel-item" data-bs-interval="3000">
-						<video class="img-fluid" autoplay loop muted>
-							<source
-								src="https://asset.hankooktire.com/content/dam/hankooktire/global/video/main/LC_kinergy_1920_970_230523.mp4"
-								type="video/mp4" />
-						</video>
-					</div>
-				</div>
-				<button class="carousel-control-prev" type="button"
-					data-bs-target="#sliderCarouse" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button"
-					data-bs-target="#sliderCarouse" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
+			<!-- Hiển thị slider -->
+			<%@ include file="/WEB-INF/views/component/sliderCarouse.jsp"%>
 			<div class="row main-product-and-sidebar">
 				<div class="col-lg-9 col-md-9 col-sm-12" id="productsContainer">
-					<div class="box-content mt-3">
-						<div class="row">
-							<!-- Lặp sản phẩm -->
-							<div class="col-lg-3 col-md-4 col-sm-12 mb-3">
-								<div class="card d-flex flex-column h-100">
-									<a href="/templates/productdetail.html"> <img
-										src="https://asset.hankooktire.com/content/dam/hankooktire/eu/product/tire_list/suv/IH01A_normal.png"
-										class="card-img-top img-thumbnail" data-bs-toggle="tooltip"
-										data-bs-placement="right" title="Click to see more details">
-									</a>
-									<div class="card-body">
-										<h5 class="card-title">iON evo AS SUV</h5>
-										<p class="card-text font_caption_lg desc">EVolutionised to
-											perform and last</p>
-									</div>
-									<div
-										class="card-footer d-flex align-items-center justify-content-end">
-										<div class="me-4">
-											<a href="" class="text-reset text-decoration-none"> <i
-												class="bi bi-suit-heart"></i> <span>2.099</span>
-											</a>
-										</div>
-										<div class="me-4">
-											<a href="${pageContext.request.contextPath}/share" class="text-reset text-decoration-none"> <i
-												class="bi bi-share"></i> <span>1.099</span>
-											</a>
-										</div>
-										<!-- <div class="me-4">
-                                            <a href="" class="text-reset text-decoration-none">
-                                                <i class="bi bi-cart-check"></i>
-                                                <span>7.099</span>
-                                            </a>
-                                        </div> -->
-									</div>
-								</div>
-							</div>
-						</div>
-						<nav aria-label="Page navigation example" id="paginationF99">
-							<ul class="pagination justify-content-center">
-								<li class="page-item"><a class="page-link" href="">First</a></li>
-								<li class="page-item"><a class="page-link" href="">Previous</a></li>
-								<li class="page-item"><a class="page-link" href="">Next</a>
-								</li>
-								<li class="page-item"><a class="page-link" href="">Last</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>				
+					<!-- Hiển thị sản phẩm active -->
+					<%@ include file="/WEB-INF/views/component/main-product.jsp"%>
+				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12"
 					id="sidebar-login-n-categories">
 					<!-- Đăng nhập thành công thì ẩn #login__sidebar, thay vào đó là #infoMember__sidebar -->
@@ -315,7 +226,7 @@
 				</div>
 			</div>
 		</main>
-		<%@ include file="/WEB-INF/views/component/footer.jsp" %>
+		<%@ include file="/WEB-INF/views/component/footer.jsp"%>
 	</div>
 
 	<script

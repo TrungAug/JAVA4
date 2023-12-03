@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -35,9 +36,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
+import pc05132.hankook.dao.LikeDAO;
+import pc05132.hankook.dao.ProductDAO;
 import pc05132.hankook.dao.UserDao;
+import pc05132.hankook.entity.Product;
 import pc05132.hankook.entity.User;
 import pc05132.hankook.untils.CookiesUntils;
+import pc05132.hankook.untils.HankookUntils;
 
 @WebServlet({ "/home", "/user-controller/*" })
 public class HomeController extends HttpServlet {
@@ -46,10 +51,15 @@ public class HomeController extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
+		HttpSession session = req.getSession();
+		User userLogin = (User) session.getAttribute("userLogin");
+		
+		List<Product> listActive = ProductDAO.getInstance().findAllActive(true);
+		
 		
 		if (uri.contains("update-account")) {
 			this.doUpdate(req, resp);
@@ -59,7 +69,7 @@ public class HomeController extends HttpServlet {
 			return;
 		} else if (uri.contains("sign-in") || uri.contains("side-bar-sign-in")) {
 			String usName = CookiesUntils.get("userNamec", req);
-			String passW =CookiesUntils.get("passWordc", req);
+			String passW = CookiesUntils.get("passWordc", req);
 			req.setAttribute("usernameC", usName);
 			req.setAttribute("passwordC", passW);
 			this.doSignIn(req, resp);
@@ -67,22 +77,36 @@ public class HomeController extends HttpServlet {
 		} else if (uri.contains("forget-pass")) {
 			this.doForgetPassword(req, resp);
 			return;
-		}else if(uri.contains("sign-out")) {
+		} else if (uri.contains("sign-out")) {
 			this.doSignOut(req, resp);
 			return;
 		}
-		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
+		
+		
+		
+		req.setAttribute("listPActive", listActive);
+		if (userLogin != null) {
+			if (userLogin.isAdmin()) {
+				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
+			} else {
+				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
+			}
+		} else {
+			req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
+		}
+
 	}
 
 	private void doUpdate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//Filter cho chức năng update, kiểm tra UserLogin nếu == null . không cho truy cập đường dẫn
+		// Filter cho chức năng update, kiểm tra UserLogin nếu == null . không cho truy
+		// cập đường dẫn
 		// "/user-controller/update-account"
-		
+
 		String method = req.getMethod();
 		req.setAttribute("mess", "Welcome! Edit your profile and please enter the correct username first.!");
 		if (method.equalsIgnoreCase("POST")) {
 			String id = req.getParameter("idUs");
-			String admin = req.getParameter("admin");			
+			String admin = req.getParameter("admin");
 			User checkUserExists = UserDao.getInstance().findUserById(id);
 			if (checkUserExists != null) {
 				try {
@@ -104,14 +128,13 @@ public class HomeController extends HttpServlet {
 							dtc.setPattern("MM/dd/yyyy");
 							ConvertUtils.register(dtc, Date.class);
 							User updateUser = new User();
-							
-							if(admin==null) {
+
+							if (admin == null) {
 								updateUser.setAdmin(false);
-							}else {
+							} else {
 								updateUser.setAdmin(true);
 							}
-							
-									
+
 							BeanUtils.populate(updateUser, req.getParameterMap());
 							UserDao.getInstance().update(updateUser);
 							req.setAttribute("mess", "Update was successful.");
@@ -160,7 +183,7 @@ public class HomeController extends HttpServlet {
 							dtc.setPattern("MM/dd/yyyy");
 							ConvertUtils.register(dtc, Date.class);
 							User createUser = new User();
-									
+
 							BeanUtils.populate(createUser, req.getParameterMap());
 							UserDao.getInstance().create(createUser);
 							req.setAttribute("mess", "Registration was successful.");
@@ -183,46 +206,45 @@ public class HomeController extends HttpServlet {
 	}
 
 	private void doSignIn(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String method = req.getMethod();	
+		String method = req.getMethod();
 		req.setAttribute("mess", "Welcome To Sign In");
 		if (method.equalsIgnoreCase("POST")) {
-			String userName=req.getParameter("username");
-			String passWord=req.getParameter("password");
-			
-			User checkUserExists=UserDao.getInstance().findUserById(userName);
-			if(checkUserExists==null) {
+			String userName = req.getParameter("username");
+			String passWord = req.getParameter("password");
+
+			User checkUserExists = UserDao.getInstance().findUserById(userName);
+			if (checkUserExists == null) {
 				req.setAttribute("mess", "Wrong username");
-			}else {
-				if(checkUserExists.getPassWord().equals(passWord)) {
+			} else {
+				if (checkUserExists.getPassWord().equals(passWord)) {
 					String remember = req.getParameter("remember");
-					int hours = remember==null?0:1; //1 phút
-					CookiesUntils.add("userNamec",userName, hours, resp);
-					CookiesUntils.add("passWordc",passWord, hours, resp);
-					
-					//lưu đối tương đăng nhập vào session
-					
+					int hours = remember == null ? 0 : 1; // 1 phút
+					CookiesUntils.add("userNamec", userName, hours, resp);
+					CookiesUntils.add("passWordc", passWord, hours, resp);
+
+					// lưu đối tương đăng nhập vào session
+
 					req.getSession().setAttribute("userLogin", checkUserExists);
-					
-					
-					if(checkUserExists.isAdmin()) {
+
+					if (checkUserExists.isAdmin()) {
 						req.setAttribute("mess", "Sign In Successfully as Admin");
-						resp.sendRedirect(req.getContextPath()+"/user/admin");
+						resp.sendRedirect(req.getContextPath() + "/user/admin");
 						return;
-						
-					}else {
+
+					} else {
 						req.setAttribute("mess", "Sign In Successfully as Customer");
-						
-						resp.sendRedirect(req.getContextPath()+"/user/customer");
+
+						resp.sendRedirect(req.getContextPath() + "/user/customer");
 						return;
 					}
-					
-				}else {
+
+				} else {
 					req.setAttribute("mess", "Wrong password");
 				}
 			}
 
 		}
-		
+
 		req.getRequestDispatcher("/WEB-INF/views/account/sign-in.jsp").forward(req, resp);
 	}
 
@@ -235,28 +257,27 @@ public class HomeController extends HttpServlet {
 			String username = req.getParameter("username");
 
 			User user = UserDao.getInstance().findUserById(username);
-			if(user==null) {
+			if (user == null) {
 				req.setAttribute("mess", "Wrong Username. Please input again!");
-			}else {
-				if(user.getEmail().equals(emailTo)) {
-					String emailText = "Your Password is: "+user.getPassWord();
-					
+			} else {
+				if (user.getEmail().equals(emailTo)) {
+					String emailText = "Your Password is: " + user.getPassWord();
+
 					Properties props = new Properties();
 					props.setProperty("mail.smtp.auth", "true");
 					props.setProperty("mail.smtp.starttls.enable", "true");
 					props.setProperty("mail.smtp.host", "smtp.gmail.com");
 					props.setProperty("mail.smtp.port", "587");
-					
+
 					String emailFrom = "trung2894@gmail.com";
 					String password = "ludqafyeukrhuiuu";
-					 
-					
+
 					Session session = Session.getInstance(props, new Authenticator() {
 						protected PasswordAuthentication getPasswordAuthentication() {
 							return new PasswordAuthentication(emailFrom, password);
 						}
 					});
-					
+
 					try {
 						MimeMessage message = new MimeMessage(session);
 						message.setFrom(new InternetAddress(emailFrom));
@@ -264,7 +285,7 @@ public class HomeController extends HttpServlet {
 						message.setSubject("Password Recovery Instruction");
 						message.setText(emailText, "UTF-8", "html");
 						message.setReplyTo(null);
-	
+
 						Transport.send(message);
 						req.setAttribute("mess", "The password has been sent to your email. Please check it.!");
 					} catch (AddressException e) {
@@ -274,20 +295,19 @@ public class HomeController extends HttpServlet {
 						e.printStackTrace();
 						req.setAttribute("mess", "Email delivery failed!");
 					}
-					
-					
-				}else {
+
+				} else {
 					req.setAttribute("mess", "Wrong Email. Please input again!");
 				}
-			}		
+			}
 		}
 
 		req.getRequestDispatcher("/WEB-INF/views/account/forget-pass.jsp").forward(req, resp);
 	}
-	
+
 	private void doSignOut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		session.invalidate();
-		resp.sendRedirect(req.getContextPath()+"/home");
+		resp.sendRedirect(req.getContextPath() + "/home");
 	}
 }

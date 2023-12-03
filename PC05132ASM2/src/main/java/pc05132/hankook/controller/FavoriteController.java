@@ -7,8 +7,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import pc05132.hankook.entity.User;
 
-@WebServlet({"/favorite"})
+@WebServlet({ "/favorite" })
 public class FavoriteController extends HttpServlet {
 
 	/**
@@ -18,9 +20,21 @@ public class FavoriteController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/templates/favorite.jsp").forward(req, resp);
+
+		HttpSession session = req.getSession();
+		User userLogin = (User) session.getAttribute("userLogin");
+		if (userLogin != null) {
+			if (userLogin.isAdmin()) {
+				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
+			} else {
+				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
+			}
+		} else {
+			req.getRequestDispatcher("/WEB-INF/views/templates/favorite.jsp").forward(req, resp);
+		}
+
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/templates/favorite.jsp").forward(req, resp);
