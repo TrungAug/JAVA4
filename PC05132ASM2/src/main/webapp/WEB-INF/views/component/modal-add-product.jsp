@@ -99,7 +99,7 @@
 					</div>
 					<div class="row mt-5 d-flex justify-content-end">
 						<button formaction="${url}/create-product"
-							class="btn btn-primary m-2">Create</button>
+							class="btn btn-primary">Create</button>
 					</div>
 				</form>
 			</div>

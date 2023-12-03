@@ -33,7 +33,7 @@ import pc05132.hankook.untils.HankookUntils;
 
 @MultipartConfig
 @WebServlet({ "/admin/editor-product", "/admin/create-product", "/admin/update-product", "/admin/change-product",
-		"/admin/delete-product","/admin/add-size-product" })
+		"/admin/delete-product", "/admin/add-size-product", "/admin/delete-size-product" })
 public class EditorProductController extends HttpServlet {
 
 	/**
@@ -47,8 +47,9 @@ public class EditorProductController extends HttpServlet {
 		List<Tyre> listT = HankookUntils.excuteNamedQueryNoParam("Tyre.FindAll", Tyre.class);
 		String jpql = "SELECT o FROM Product o ORDER BY o.prodName ASC";
 		List<Product> listPShow = HankookUntils.excuteQuey(jpql, Product.class);
-		String indexParam = req.getParameter("index");
-
+		String indexParam = req.getParameter("index");//click chọn change product
+		
+		
 		String uri = req.getRequestURI();
 		if (uri.contains("create-product")) {
 			this.doAddProduct(req, resp);
@@ -59,8 +60,11 @@ public class EditorProductController extends HttpServlet {
 		} else if (uri.contains("delete-product")) {
 			this.doDeleteProduct(req, resp);
 			return;
-		}else if(uri.contains("add-size-product")) {
+		} else if (uri.contains("add-size-product")) {
 			this.doAddSizeProduct(req, resp);
+			return;
+		} else if (uri.contains("delete-size-product")) {
+			this.doDeleteSizeProduct(req, resp);
 			return;
 		}
 
@@ -69,9 +73,9 @@ public class EditorProductController extends HttpServlet {
 				int index = Integer.parseInt(indexParam);
 				req.setAttribute("showP", listPShow.get(index));
 				req.setAttribute("formEditProd", listPShow.get(index));
-				// System.out.println(listPShow.get(index).getIdPro());
 			} catch (Exception e) {
 				req.setAttribute("showP", listPShow.get(0));
+				
 				e.printStackTrace();
 			}
 		} else {
@@ -84,15 +88,40 @@ public class EditorProductController extends HttpServlet {
 		req.getRequestDispatcher("/WEB-INF/views/templates/edit-product.jsp").forward(req, resp);
 	}
 
-	
+
+	protected void doDeleteSizeProduct(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
+		String id = req.getParameter("id");
+		Size size = SizeDAO.getInstance().findSizeById(id);
+
+		if (size != null) {
+
+			try {
+
+				SizeDAO.getInstance().remove(id);
+
+				req.getSession().setAttribute("message", "Delete Successfuly");
+				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+			} catch (Exception e) {
+				req.setAttribute("message", "Delete Failed");
+				e.printStackTrace();
+			}
+
+		} else {
+			req.getSession().setAttribute("message", "Size id does not exists");
+			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+		}
+
+	}
+
 	protected void doAddSizeProduct(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
 		String idProd = req.getParameter("idPro");
-		//System.out.println("idPro from Addsize "+ idProd);
 		Size size = new Size();
 		Product checkProduct = ProductDAO.getInstance().findProdById(idProd);
-		
+
 		if (checkProduct != null) {
 
 			try {
@@ -108,18 +137,19 @@ public class EditorProductController extends HttpServlet {
 
 		} else {
 			req.getSession().setAttribute("message", "Product id does not exists");
+			
 			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
 		}
 
 	}
-	
+
 	protected void doDeleteProduct(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
 		String idProd = req.getParameter("id");
 
 		Product checkProduct = ProductDAO.getInstance().findProdById(idProd);
-		
+
 		if (checkProduct != null) {
 
 			try {
@@ -136,15 +166,14 @@ public class EditorProductController extends HttpServlet {
 				for (Image image : listIm) {
 					ImageDAO.getInstance().remove(image.getIdImg() + "");
 				}
-				
-				
-				List<Product> listP =HankookUntils.excuteNamedQuery("paramId", idProd,
-						"Product.findByIdProd", Product.class);
-				
+
+				List<Product> listP = HankookUntils.excuteNamedQuery("paramId", idProd, "Product.findByIdProd",
+						Product.class);
+
 				for (Product product : listP) {
 					ProductDAO.getInstance().remove(product.getIdPro());
 				}
-				
+
 				req.getSession().setAttribute("message", "Delete Successfuly");
 				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
 			} catch (Exception e) {
@@ -165,7 +194,7 @@ public class EditorProductController extends HttpServlet {
 		String idProd = req.getParameter("idPro");
 
 		Product checkProduct = ProductDAO.getInstance().findProdById(idProd);
-		
+
 		if (checkProduct != null) {
 
 			try {
@@ -246,7 +275,7 @@ public class EditorProductController extends HttpServlet {
 		} else {
 			req.getSession().setAttribute("message", "Product id does not exists");
 			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
-			
+
 		}
 
 	}
@@ -317,7 +346,7 @@ public class EditorProductController extends HttpServlet {
 					}
 
 				}
-				
+
 				req.getSession().setAttribute("message", "Insert Successfuly");
 				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
 			} catch (Exception e) {

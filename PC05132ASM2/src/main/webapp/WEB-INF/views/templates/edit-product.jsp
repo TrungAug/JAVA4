@@ -85,11 +85,14 @@
 											product </a>
 									</div>
 									<div class="col">
-										<a type="button" href="${url}/delete-product?id=${showP.idPro}" class="text-info"> Delete product </a>
+										<a type="button"
+											href="${url}/delete-product?id=${showP.idPro}"
+											class="text-info"> Delete product </a>
 									</div>
 									<div class="col">
-										<a type="button" href="${url}/update-product?id=${showP.idPro}" class="text-info"
-											data-bs-toggle="modal"
+										<a type="button"
+											href="${url}/update-product?id=${showP.idPro}"
+											class="text-info" data-bs-toggle="modal"
 											data-bs-target="#editorEditProductModal"> Edit product</a>
 									</div>
 								</div>
@@ -134,10 +137,8 @@
 											<td>${s.profile}</td>
 											<td>${s.rim}</td>
 											<td>${s.diameter}</td>
-											<td><a class="m-2 text-info" href="">Delete Size</a> <a
-												type="button" class="text-info" data-bs-toggle="modal"
-												data-bs-target="#editorEditSizeProductModal"> Edit Size
-											</a> 
+											<td><a class="m-2 text-danger"
+												href="${url}/delete-size-product?id=${s.id}">Delete Size</a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -158,10 +159,15 @@
 	<!-- Modal Trang Editor cho nút AddSize-->
 	<%@ include file="/WEB-INF/views/component/modal-add-size.jsp"%>
 	<!-- Modal Trang Editor cho nút EditSize-->
-	<%@ include file="/WEB-INF/views/component/modal-edit-size.jsp"%>
+	
 	<!-- Modal Trang Editor cho nút AddProduct-->
 	<%@ include file="/WEB-INF/views/component/modal-add-product.jsp"%>
-
+	<script>
+		function sendDriectToEditSize(id) {
+			// Thực hiện chuyển hướng trang
+			window.location.href = '${url}/edit-size-product?id=' + id;
+		}
+	</script>
 	<script>
 		setTimeout(function() {
 			document.getElementById('messageInfoProd').style.display = 'none';
