@@ -7,9 +7,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-
+@NamedQueries({
+	
+	@NamedQuery(
+				name = "Image.findByIdProd",
+				query = "select i from Image i where i.product.idPro=:paramId"
+			)
+})
 @Entity
 @Table(name = "images")
 public class Image {

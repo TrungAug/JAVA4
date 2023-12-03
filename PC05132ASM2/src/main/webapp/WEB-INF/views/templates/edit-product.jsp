@@ -21,6 +21,7 @@
 	style="height: 100vh;">
 	<div class="container-fluid">
 		<%@ include file="/WEB-INF/views/component/header-admin.jsp"%>
+		<c:url var="url" value="/admin"></c:url>
 		<main class="main">
 			<div class="row d-flex justify-content-between align-items-center">
 				<div class="col">
@@ -84,7 +85,7 @@
 											product </a>
 									</div>
 									<div class="col">
-										<a type="button" class="text-info"> Delete product </a>
+										<a type="button" href="${url}/delete-product?id=${showP.idPro}" class="text-info"> Delete product </a>
 									</div>
 									<div class="col">
 										<a type="button" href="${url}/update-product?id=${showP.idPro}" class="text-info"
@@ -119,6 +120,7 @@
 										<th scope="col">Size</th>
 										<th scope="col">Width</th>
 										<th scope="col">Profile</th>
+										<th scope="col">Rim</th>
 										<th scope="col">Diameter</th>
 										<th></th>
 									</tr>
@@ -127,10 +129,11 @@
 									<c:forEach var="s" items="${showP.sizes}">
 										<tr>
 											<td></td>
-											<td>${s.Size}</td>
-											<td>${s.Width}</td>
-											<td>@${s.Profile}</td>
-											<td>@${s.Diameter}</td>
+											<td>${s.sizeName}</td>
+											<td>${s.width}</td>
+											<td>${s.profile}</td>
+											<td>${s.rim}</td>
+											<td>${s.diameter}</td>
 											<td><a class="m-2 text-info" href="">Delete Size</a> <a
 												type="button" class="text-info" data-bs-toggle="modal"
 												data-bs-target="#editorEditSizeProductModal"> Edit Size

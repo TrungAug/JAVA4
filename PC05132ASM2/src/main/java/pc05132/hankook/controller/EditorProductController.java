@@ -11,6 +11,7 @@ import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.commons.beanutils.converters.DateTimeConverter;
 
+import jakarta.persistence.TypedQuery;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,15 +22,18 @@ import jakarta.servlet.http.Part;
 import pc05132.hankook.dao.ImageDAO;
 import pc05132.hankook.dao.ProductDAO;
 import pc05132.hankook.dao.RelProductTyreDAO;
+import pc05132.hankook.dao.SizeDAO;
 import pc05132.hankook.dao.TyreDAO;
 import pc05132.hankook.entity.Image;
 import pc05132.hankook.entity.Product;
 import pc05132.hankook.entity.RelProductTyre;
+import pc05132.hankook.entity.Size;
 import pc05132.hankook.entity.Tyre;
 import pc05132.hankook.untils.HankookUntils;
 
 @MultipartConfig
-@WebServlet({ "/admin/editor-product", "/admin/create-product", "/admin/update-product", "/admin/change-product" })
+@WebServlet({ "/admin/editor-product", "/admin/create-product", "/admin/update-product", "/admin/change-product",
+		"/admin/delete-product","/admin/add-size-product" })
 public class EditorProductController extends HttpServlet {
 
 	/**
@@ -49,44 +53,138 @@ public class EditorProductController extends HttpServlet {
 		if (uri.contains("create-product")) {
 			this.doAddProduct(req, resp);
 			return;
-		} else if (uri.contains("update-product")) {			
+		} else if (uri.contains("update-product")) {
 			this.doUpdateProduct(req, resp);
 			return;
+		} else if (uri.contains("delete-product")) {
+			this.doDeleteProduct(req, resp);
+			return;
+		}else if(uri.contains("add-size-product")) {
+			this.doAddSizeProduct(req, resp);
+			return;
 		}
-		if(indexParam!=null) {
+
+		if (indexParam != null) {
 			try {
 				int index = Integer.parseInt(indexParam);
 				req.setAttribute("showP", listPShow.get(index));
 				req.setAttribute("formEditProd", listPShow.get(index));
-				//System.out.println(listPShow.get(index).getIdPro());
+				// System.out.println(listPShow.get(index).getIdPro());
 			} catch (Exception e) {
 				req.setAttribute("showP", listPShow.get(0));
 				e.printStackTrace();
 			}
-		}else {
+		} else {
 			req.setAttribute("showP", listPShow.get(0));
 			req.setAttribute("formEditProd", listPShow.get(0));
 		}
-		
-		
+
 		req.setAttribute("showAllProduct", listPShow);
 		req.setAttribute("Tyres", listT);
 		req.getRequestDispatcher("/WEB-INF/views/templates/edit-product.jsp").forward(req, resp);
 	}
 
-	protected void doUpdateProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Product product = new Product();
+	
+	protected void doAddSizeProduct(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
 		String idProd = req.getParameter("idPro");
-		
+		//System.out.println("idPro from Addsize "+ idProd);
+		Size size = new Size();
 		Product checkProduct = ProductDAO.getInstance().findProdById(idProd);
-		System.out.println(checkProduct);
+		
+		if (checkProduct != null) {
+
+			try {
+				size.setProduct(checkProduct);
+				BeanUtils.populate(size, req.getParameterMap());
+				SizeDAO.getInstance().create(size);
+				req.getSession().setAttribute("message", "Add size Successfuly");
+				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+			} catch (Exception e) {
+				req.setAttribute("message", "Delete Failed");
+				e.printStackTrace();
+			}
+
+		} else {
+			req.getSession().setAttribute("message", "Product id does not exists");
+			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+		}
+
+	}
+	
+	protected void doDeleteProduct(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
+		String idProd = req.getParameter("id");
+
+		Product checkProduct = ProductDAO.getInstance().findProdById(idProd);
+		
 		if (checkProduct != null) {
 
 			try {
 
+				List<RelProductTyre> listR = HankookUntils.excuteNamedQuery("paramId", idProd,
+						"RelProductTyre.findByIdProd", RelProductTyre.class);
+				for (RelProductTyre relProductTyre : listR) {
+					RelProductTyreDAO.getInstance().remove(relProductTyre.getId() + "");
+				}
+
+				List<Image> listIm = HankookUntils.excuteNamedQuery("paramId", idProd, "Image.findByIdProd",
+						Image.class);
+
+				for (Image image : listIm) {
+					ImageDAO.getInstance().remove(image.getIdImg() + "");
+				}
 				
+				
+				List<Product> listP =HankookUntils.excuteNamedQuery("paramId", idProd,
+						"Product.findByIdProd", Product.class);
+				
+				for (Product product : listP) {
+					ProductDAO.getInstance().remove(product.getIdPro());
+				}
+				
+				req.getSession().setAttribute("message", "Delete Successfuly");
+				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+			} catch (Exception e) {
+				req.setAttribute("message", "Delete Failed");
+				e.printStackTrace();
+			}
+
+		} else {
+			req.getSession().setAttribute("message", "Product id does not exists");
+			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+		}
+
+	}
+
+	protected void doUpdateProduct(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		Product product = new Product();
+		String idProd = req.getParameter("idPro");
+
+		Product checkProduct = ProductDAO.getInstance().findProdById(idProd);
+		
+		if (checkProduct != null) {
+
+			try {
+
 				BeanUtils.populate(product, req.getParameterMap());
 				ProductDAO.getInstance().update(product);
+
+				List<RelProductTyre> listR = HankookUntils.excuteNamedQuery("paramId", idProd,
+						"RelProductTyre.findByIdProd", RelProductTyre.class);
+				for (RelProductTyre relProductTyre : listR) {
+					RelProductTyreDAO.getInstance().remove(relProductTyre.getId() + "");
+				}
+
+				List<Image> listIm = HankookUntils.excuteNamedQuery("paramId", idProd, "Image.findByIdProd",
+						Image.class);
+
+				for (Image image : listIm) {
+					ImageDAO.getInstance().remove(image.getIdImg() + "");
+				}
 
 				String[] tyres = req.getParameterValues("tyre");
 
@@ -109,7 +207,6 @@ public class EditorProductController extends HttpServlet {
 					}
 				}
 
-				
 				File dir = new File(req.getServletContext().getRealPath("/files"));
 
 				if (!dir.exists()) {
@@ -139,7 +236,8 @@ public class EditorProductController extends HttpServlet {
 					}
 
 				}
-			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
+				req.getSession().setAttribute("message", "Update Successfuly");
+				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
 			} catch (Exception e) {
 				req.setAttribute("message", "Insert Failed");
 				e.printStackTrace();
@@ -148,14 +246,11 @@ public class EditorProductController extends HttpServlet {
 		} else {
 			req.getSession().setAttribute("message", "Product id does not exists");
 			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
-			//req.setAttribute("message", "Product id does not exists");
-			//req.getRequestDispatcher("/WEB-INF/views/templates/edit-product.jsp").forward(req, resp);
+			
 		}
-		
-		
+
 	}
-	
-	
+
 	protected void doAddProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Product product = new Product();
 		String idProd = req.getParameter("idPro");
@@ -222,21 +317,20 @@ public class EditorProductController extends HttpServlet {
 					}
 
 				}
-				// req.setAttribute("message", "Insert Successfuly");
+				
+				req.getSession().setAttribute("message", "Insert Successfuly");
 				resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
 			} catch (Exception e) {
 				req.setAttribute("message", "Insert Failed");
 				e.printStackTrace();
 			}
 
-		} else {		
+		} else {
 			req.getSession().setAttribute("message", "Product id already exists");
 			resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
-			
-			//req.setAttribute("message", "Product id already exists");
-			//req.getRequestDispatcher("/WEB-INF/views/templates/edit-product.jsp").forward(req, resp);
+
 		}
-		
+
 	}
-	
+
 }

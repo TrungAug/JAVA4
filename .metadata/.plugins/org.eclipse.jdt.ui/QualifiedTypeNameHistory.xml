@@ -14,7 +14,6 @@
     <fullyQualifiedTypeName name="pc05132.lab7.bai3.filter.RRSharer"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="pc05132.lab7.bai2.model.AccountMod"/>
     <fullyQualifiedTypeName name="java.lang.Error"/>
     <fullyQualifiedTypeName name="java.net.URLEncoder"/>
@@ -53,11 +52,12 @@
     <fullyQualifiedTypeName name="pc05132.hankook.dao.ImageDAO"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.RelProductTyre"/>
-    <fullyQualifiedTypeName name="pc05132.hankook.dao.RelProductTyreDAO"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.lang.reflect.InvocationTargetException"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.hankook.untils.HankookUntils"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.Product"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="pc05132.hankook.dao.RelProductTyreDAO"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
 </qualifiedTypeNameHistroy>

@@ -11,10 +11,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-
+@NamedQueries({
+	
+	@NamedQuery(
+				name = "RelProductTyre.findByIdProd",
+				query = "select r from RelProductTyre r where r.product.idPro=:paramId"
+			)
+})
 @Entity
 @Table
 public class RelProductTyre {

@@ -19,69 +19,56 @@ public class Size {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String Size;
-	private String Rim;
-	private String Width;
-	private String Profile;
-	private String Diameter;
+	private String sizeName;
+	private String rim;
+	private String width;
+	private String profile;
+	private String diameter;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id_fk_size")
 	private Product product;
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getSize() {
-		return Size;
+	public String getSizeName() {
+		return sizeName;
 	}
-
-	public void setSize(String size) {
-		Size = size;
+	public void setSizeName(String sizeName) {
+		this.sizeName = sizeName;
 	}
-
 	public String getRim() {
-		return Rim;
+		return rim;
 	}
-
 	public void setRim(String rim) {
-		Rim = rim;
+		this.rim = rim;
 	}
-
 	public String getWidth() {
-		return Width;
+		return width;
 	}
-
 	public void setWidth(String width) {
-		Width = width;
+		this.width = width;
 	}
-
 	public String getProfile() {
-		return Profile;
+		return profile;
 	}
-
 	public void setProfile(String profile) {
-		Profile = profile;
+		this.profile = profile;
 	}
-
 	public String getDiameter() {
-		return Diameter;
+		return diameter;
 	}
-
 	public void setDiameter(String diameter) {
-		Diameter = diameter;
+		this.diameter = diameter;
 	}
-
 	public Product getProduct() {
 		return product;
 	}
-
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
+	
 }
