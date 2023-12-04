@@ -19,7 +19,7 @@
 
 <body class="d-flex flex-column justify-content-between"
 	style="height: 100vh;">
-	<%@ include file="/WEB-INF/views/component/header-admin.jsp"%>
+	<%@ include file="/WEB-INF/views/component/header.jsp"%>
 	<div class="container-fluid">
 
 		<main class="main">

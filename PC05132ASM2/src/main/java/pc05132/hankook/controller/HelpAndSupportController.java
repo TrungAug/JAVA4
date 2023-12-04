@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import pc05132.hankook.entity.User;
 
-@WebServlet({ "/help" })
+@WebServlet({ "/home/help" })
 public class HelpAndSupportController extends HttpServlet {
 
 	/**
@@ -21,17 +21,19 @@ public class HelpAndSupportController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		HttpSession session = req.getSession();
-		User userLogin = (User) session.getAttribute("userLogin");
-		if (userLogin != null) {
-			if (userLogin.isAdmin()) {
-				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
-			} else {
-				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
-			}
-		} else {
-			req.getRequestDispatcher("/WEB-INF/views/templates/help.jsp").forward(req, resp);
-		}
+//		HttpSession session = req.getSession();
+//		User userLogin = (User) session.getAttribute("userLogin");
+//		if (userLogin != null) {
+//			if (userLogin.isAdmin()) {
+//				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
+//			} else {
+//				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
+//			}
+//		} else {
+//			req.getRequestDispatcher("/WEB-INF/views/templates/help.jsp").forward(req, resp);
+//		}
+		
+		req.getRequestDispatcher("/WEB-INF/views/templates/help.jsp").forward(req, resp);
 	}
 
 	@Override

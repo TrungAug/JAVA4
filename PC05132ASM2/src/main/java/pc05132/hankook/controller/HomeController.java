@@ -44,7 +44,7 @@ import pc05132.hankook.entity.User;
 import pc05132.hankook.untils.CookiesUntils;
 import pc05132.hankook.untils.HankookUntils;
 
-@WebServlet({ "/home", "/user-controller/*" })
+@WebServlet({ "/home/index", "/user-controller/*" })
 public class HomeController extends HttpServlet {
 
 	/**
@@ -81,20 +81,9 @@ public class HomeController extends HttpServlet {
 			this.doSignOut(req, resp);
 			return;
 		}
-		
-		
-		
+			
 		req.setAttribute("listPActive", listActive);
-		if (userLogin != null) {
-			if (userLogin.isAdmin()) {
-				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
-			} else {
-				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
-			}
-		} else {
-			req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
-		}
-
+		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 	}
 
 	private void doUpdate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -228,13 +217,13 @@ public class HomeController extends HttpServlet {
 
 					if (checkUserExists.isAdmin()) {
 						req.setAttribute("mess", "Sign In Successfully as Admin");
-						resp.sendRedirect(req.getContextPath() + "/user/admin");
+						resp.sendRedirect(req.getContextPath() + "/admin/editor-product");
 						return;
 
 					} else {
 						req.setAttribute("mess", "Sign In Successfully as Customer");
 
-						resp.sendRedirect(req.getContextPath() + "/user/customer");
+						resp.sendRedirect(req.getContextPath() + "/home/favorite");
 						return;
 					}
 
@@ -308,6 +297,6 @@ public class HomeController extends HttpServlet {
 	private void doSignOut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		session.invalidate();
-		resp.sendRedirect(req.getContextPath() + "/home");
+		resp.sendRedirect(req.getContextPath() + "/home/index");
 	}
 }

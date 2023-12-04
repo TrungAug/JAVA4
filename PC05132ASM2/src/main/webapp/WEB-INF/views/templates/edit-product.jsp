@@ -20,7 +20,7 @@
 <body class="d-flex flex-column justify-content-between"
 	style="height: 100vh;">
 	<div class="container-fluid">
-		<%@ include file="/WEB-INF/views/component/header-admin.jsp"%>
+		<%@ include file="/WEB-INF/views/component/header.jsp"%>
 		<c:url var="url" value="/admin"></c:url>
 		<main class="main">
 			<div class="row d-flex justify-content-between align-items-center">

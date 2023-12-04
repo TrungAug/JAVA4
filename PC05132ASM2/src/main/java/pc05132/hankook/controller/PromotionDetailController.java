@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import pc05132.hankook.entity.User;
 
-@WebServlet({ "/promotion" })
+@WebServlet({ "/home/promotion" })
 public class PromotionDetailController extends HttpServlet {
 
 	/**
@@ -20,17 +20,18 @@ public class PromotionDetailController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession();
-		User userLogin = (User) session.getAttribute("userLogin");
-		if (userLogin != null) {
-			if (userLogin.isAdmin()) {
-				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
-			} else {
-				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
-			}
-		}else {
-			req.getRequestDispatcher("/WEB-INF/views/templates/promotion.jsp").forward(req, resp);
-		}	
+//		HttpSession session = req.getSession();
+//		User userLogin = (User) session.getAttribute("userLogin");
+//		if (userLogin != null) {
+//			if (userLogin.isAdmin()) {
+//				req.getRequestDispatcher("/WEB-INF/views/templates/home-admin.jsp").forward(req, resp);
+//			} else {
+//				req.getRequestDispatcher("/WEB-INF/views/templates/home-customer.jsp").forward(req, resp);
+//			}
+//		}else {
+//			req.getRequestDispatcher("/WEB-INF/views/templates/promotion.jsp").forward(req, resp);
+//		}	
+		req.getRequestDispatcher("/WEB-INF/views/templates/promotion.jsp").forward(req, resp);
 	}
 
 	@Override

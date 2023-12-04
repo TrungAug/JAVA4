@@ -7,7 +7,8 @@
 		<c:forEach var="p" items="${listPActive}">
 			<div class="col-lg-3 col-md-4 col-sm-12 mb-3">
 				<div class="card d-flex flex-column h-100">
-					<a href="/templates/productdetail.html"> <img
+					<a href="${pageContext.request.contextPath}/product/product-detail?id=${p.idPro}"> 
+					<img
 						src="${p.images[0].getImgSrc()}"
 						class="card-img-top img-thumbnail" data-bs-toggle="tooltip"
 						data-bs-placement="right" title="Click to see more details">
@@ -31,12 +32,7 @@
 								 <span>1.099</span>
 							</a>
 						</div>
-						<!-- <div class="me-4">
-                                            <a href="" class="text-reset text-decoration-none">
-                                                <i class="bi bi-cart-check"></i>
-                                                <span>7.099</span>
-                                            </a>
-                                        </div> -->
+						
 					</div>
 				</div>
 			</div>
