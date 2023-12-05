@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.net.URLEncoder"/>
-    <fullyQualifiedTypeName name="pc05132.account.entity.Account"/>
-    <fullyQualifiedTypeName name="pc05132.lab7.bai5.model.AccountMod"/>
-    <fullyQualifiedTypeName name="pc05132.hankook.untils.RRSharer"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContextListener"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.User"/>
     <fullyQualifiedTypeName name="pc05132.hankook.dao.UserDao"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebListener"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.Filter"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebFilter"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="javax.annotation.processing.Generated"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="jakarta.persistence.FetchType"/>
@@ -60,4 +52,12 @@
     <fullyQualifiedTypeName name="pc05132.hankook.entity.Image"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="pc05132.hankook.entity.Size"/>
+    <fullyQualifiedTypeName name="javax.xml.crypto.dsig.spec.XPathType.Filter"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.Filter"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.ServletException"/>
+    <fullyQualifiedTypeName name="pc05132.lab8.filter.HttpFilter"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebFilter"/>
 </qualifiedTypeNameHistroy>

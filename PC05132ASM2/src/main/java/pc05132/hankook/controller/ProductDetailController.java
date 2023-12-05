@@ -24,7 +24,7 @@ public class ProductDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String idDetail = req.getParameter("id");
 
@@ -34,7 +34,8 @@ public class ProductDetailController extends HttpServlet {
 			List<Image> images = product.getImages();
 			List<Size> sizes = product.getSizes();
 			System.out.println(sizes.isEmpty());
-
+				
+			
 			if (!images.isEmpty()) {
 				req.setAttribute("images", images);
 			}

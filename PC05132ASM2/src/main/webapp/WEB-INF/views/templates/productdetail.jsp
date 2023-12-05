@@ -38,9 +38,9 @@
 								data-bs-slide-to="2" aria-label="Slide 3"></button>
 						</div>
 						<div class="carousel-inner">
-							<c:forEach var="i" items="images">
-								<div class="carousel-item" data-bs-interval="3000">
-									<img src="${i.imgSrc}" class="d-block w-100" alt="...">
+							<c:forEach var="i" items="${images}">
+								<div class="carousel-item active" data-bs-interval="3000">
+									<img src="${i.getImgSrc()}" class="d-block w-100" alt="...">
 								</div>
 							</c:forEach>
 							
@@ -91,15 +91,15 @@
 													id="accordionPanelsHanKookSizeDetailProductSubSize">
 													<div class="accordion-item">
 														<h2 class="accordion-header">
-															<c:forEach var="s" items="sizes">
+															<c:forEach var="s" items="${sizes}">
 																<button class="accordion-button" type="button"
 																	data-bs-toggle="collapse"
-																	data-bs-target="#accordionTyreVehicleSubSize"
+																	data-bs-target="#accordionTyreVehicleSubSize${s.id}"
 																	aria-expanded="true"
-																	aria-controls="accordionTyreVehicleSubSize">
+																	aria-controls="accordionTyreVehicleSubSize${s.id}">
 																	${s.sizeName}</button>
 														</h2>
-														<div id="accordionTyreVehicleSubSize"
+														<div id="accordionTyreVehicleSubSize${s.id}"
 															class="accordion-collapse collapse"
 															data-bs-parent="#accordionPanelsHanKookSizeDetailProductSubSize">
 															<ul class="list-group">

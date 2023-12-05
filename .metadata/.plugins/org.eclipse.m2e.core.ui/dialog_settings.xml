@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="PC05132_Lab8_Bai4"/>
+			<item value="PC05132_Lab8_Bai3"/>
 			<item value="PC05132_Lab8_Bai2"/>
 			<item value="PC05132_Lab8_Bai1"/>
 			<item value="LayOutWebProject"/>
@@ -15,14 +17,14 @@
 			<item value="PC05132ASM2"/>
 			<item value="Demo9_VideoManager"/>
 			<item value="PC05132_Lab5_Bai4"/>
-			<item value="PC05132_Lab5_Bai3"/>
-			<item value="PC05132_Lab5_Bai22"/>
 		</list>
 		<list key="name">
 			<item value="Hankook Website"/>
 			<item value="Demo6_Cooikie"/>
 		</list>
 		<list key="artifactId">
+			<item value="PC05132_Lab8_Bai4"/>
+			<item value="PC05132_Lab8_Bai3"/>
 			<item value="PC05132_Lab8_Bai2"/>
 			<item value="PC05132_Lab8_Bai1"/>
 			<item value="LayOutWebProject"/>
@@ -36,8 +38,6 @@
 			<item value="PC05132ASM2"/>
 			<item value="Demo9_VideoManager"/>
 			<item value="PC05132_Lab5_Bai4"/>
-			<item value="PC05132_Lab5_Bai3"/>
-			<item value="PC05132_Lab5_Bai22"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
