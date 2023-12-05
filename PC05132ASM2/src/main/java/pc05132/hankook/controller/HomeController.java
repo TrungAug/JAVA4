@@ -57,14 +57,16 @@ public class HomeController extends HttpServlet {
 		String uri = req.getRequestURI();
 		HttpSession session = req.getSession();
 		User userLogin = (User) session.getAttribute("userLogin");
-		
+//		String idLike = req.getParameter("idLike");
+//		System.out.println("idLike" + idLike);
+
 		List<Product> listActive = ProductDAO.getInstance().findAllActive(true);
 		
-		
-		if (uri.contains("update-account")) {
+		if (uri.contains("update-account")) {		
 			this.doUpdate(req, resp);
 			return;
 		} else if (uri.contains("sign-up")) {
+			
 			this.doSignUp(req, resp);
 			return;
 		} else if (uri.contains("sign-in") || uri.contains("side-bar-sign-in")) {
@@ -90,7 +92,7 @@ public class HomeController extends HttpServlet {
 		// Filter cho chức năng update, kiểm tra UserLogin nếu == null . không cho truy
 		// cập đường dẫn
 		// "/user-controller/update-account"
-
+		
 		String method = req.getMethod();
 		req.setAttribute("mess", "Welcome! Edit your profile and please enter the correct username first.!");
 		if (method.equalsIgnoreCase("POST")) {
@@ -142,7 +144,7 @@ public class HomeController extends HttpServlet {
 			}
 
 		}
-
+		
 		req.getRequestDispatcher("/WEB-INF/views/account/update-account.jsp").forward(req, resp);
 	}
 
@@ -176,6 +178,7 @@ public class HomeController extends HttpServlet {
 							BeanUtils.populate(createUser, req.getParameterMap());
 							UserDao.getInstance().create(createUser);
 							req.setAttribute("mess", "Registration was successful.");
+							
 						} catch (Exception e) {
 							req.setAttribute("mess", "Registration was fail.");
 							e.printStackTrace();
@@ -190,7 +193,7 @@ public class HomeController extends HttpServlet {
 				req.setAttribute("mess", "Username already exists.");
 			}
 		}
-
+		
 		req.getRequestDispatcher("/WEB-INF/views/account/sign-up.jsp").forward(req, resp);
 	}
 

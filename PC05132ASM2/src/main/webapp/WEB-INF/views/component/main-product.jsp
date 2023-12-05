@@ -7,9 +7,9 @@
 		<c:forEach var="p" items="${listPActive}">
 			<div class="col-lg-3 col-md-4 col-sm-12 mb-3">
 				<div class="card d-flex flex-column h-100">
-					<a href="${pageContext.request.contextPath}/product/product-detail?id=${p.idPro}"> 
-					<img
-						src="${p.images[0].getImgSrc()}"
+					<a
+						href="${pageContext.request.contextPath}/product/product-detail?id=${p.idPro}">
+						<img src="${p.images[0].getImgSrc()}"
 						class="card-img-top img-thumbnail" data-bs-toggle="tooltip"
 						data-bs-placement="right" title="Click to see more details">
 					</a>
@@ -20,19 +20,18 @@
 					<div
 						class="card-footer d-flex align-items-center justify-content-end">
 						<div class="me-4">
-							<a href="" class="text-reset text-decoration-none"> <i
-								class="bi bi-suit-heart"></i>
-								 <span>${LikeDAO.getInstance().countLikesByProductId(p.idPro)}</span>
+							<a href="?idLike=${p.idPro}"
+								class="text-reset text-decoration-none"> <i
+								class="bi bi-suit-heart"></i> <span>${p.likes.size()}</span>
 							</a>
 						</div>
 						<div class="me-4">
-							<a href="${pageContext.request.contextPath}/share"
+							<a href="${pageContext.request.contextPath}/share?idShare=${p.idPro}"
 								class="text-reset text-decoration-none"> <i
-								class="bi bi-share"></i>
-								 <span>1.099</span>
+								class="bi bi-share"></i> <span>${p.shares.size()}</span>
 							</a>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>

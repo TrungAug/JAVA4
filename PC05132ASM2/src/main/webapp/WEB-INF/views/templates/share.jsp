@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java4</title>
+    <title>Sharing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -23,8 +23,9 @@
                         <div class="card w-50 mx-auto my-5"
                             style="background: rgba(24, 23, 23, 0.8); backdrop-filter: blur(30px); color: #fff;">
                             <div class="card-body p-5 text-center">
-                                <h2 class="fw-bold mb-4" style="color: #0d6efd;">
-                                    <strong>SHARING YOUR FRIEND</strong>
+                            	<mark>${mess}</mark>
+                                <h2 class="fw-bold mb-4" style="color: #0d6efd;"}>
+                                    <strong>${userLogin==null?'PLEASE SIGN IN TO ENABLE THIS FEATURE':'SHARING YOUR FRIEND'}</strong>
                                 </h2>
                                 <form name="sendSharing">
                                     <div class="row">
@@ -46,7 +47,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-primary btn-block mb-4" id="sendSharingButton">
+                                    <button class="btn btn-primary btn-block mb-4" id="sendSharingButton" ${userLogin==null?'disabled':''}>
                                         Send Email
                                     </button>
                                 </form>

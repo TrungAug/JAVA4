@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Java4</title>
+<title>Product Administration</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -69,7 +69,7 @@
 
 									<c:forEach var="i" items="${showP.images}">
 										<div class="col img-prod">
-											<img src="./${i.imgSrc}" class="figure-img img-fluid rounded"
+											<img src="${i.imgSrc}" class="figure-img img-fluid rounded"
 												alt="..." style="width: 150px; height: 150px;">
 										</div>
 									</c:forEach>

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Java4</title>
+<title>Product Details</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -73,7 +73,7 @@
 							id="accordionPanelsHanKookSizeDetailProduct">
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button" type="button"
+									<button class="accordion-button fw-bold fs-4" type="button"
 										data-bs-toggle="collapse"
 										data-bs-target="#accordionTyreVehicleSize"
 										aria-expanded="true" aria-controls="accordionTyreVehicleSize">
@@ -92,7 +92,7 @@
 													<div class="accordion-item">
 														<h2 class="accordion-header">
 															<c:forEach var="s" items="${sizes}">
-																<button class="accordion-button" type="button"
+																<button class="accordion-button fw-bold" type="button"
 																	data-bs-toggle="collapse"
 																	data-bs-target="#accordionTyreVehicleSubSize${s.id}"
 																	aria-expanded="true"

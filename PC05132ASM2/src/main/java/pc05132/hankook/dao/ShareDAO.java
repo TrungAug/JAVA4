@@ -32,6 +32,14 @@ public class ShareDAO {
 		return list;
 	}
 	
+	public Long totalShare(String idProduct) {
+		String jpql = "SELECT COUNT(s) FROM Share s WHERE s.product.idPro = :param";
+		Long shareCount = em.createQuery(jpql, Long.class)
+				.setParameter("param", idProduct)
+			    .getSingleResult();
+		return shareCount;
+	}
+	
 	public Share create(Share o) {
 		try {
 			em.getTransaction().begin();
