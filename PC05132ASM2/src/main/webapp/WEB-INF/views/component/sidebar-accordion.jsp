@@ -14,24 +14,14 @@
 				class="accordion-collapse collapse show"
 				data-bs-parent="#accordionPanelsHanKook">
 				<ul class="list-group">
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center">
-						Electric Vehicle</li>
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center">
-						Passenger Car</li>
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center">
-						SUV/4WD</li>
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center">
-						VAN/Light Truck</li>
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center">
-						Truck & Bus</li>
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center">
-						Competition Tyres</li>
+					<c:forEach var="t" items="${listTyre}">					
+						<li
+							class="list-group-item d-flex justify-content-between align-items-center">
+							<a href="?idTyres=${t.idTyre}">
+								${t.nameTyre}
+							</a>
+						</li>					
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

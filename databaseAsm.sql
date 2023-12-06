@@ -62,3 +62,13 @@ GO
 select * from tyres
 select * from products
 select * from RelProductTyre
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'spFilterByTyre')
+	DROP PROC spFilterByTyre
+GO
+CREATE PROC spFilterByTyre(@idTyre varchar)
+As
+begin
+	select * from products t left join RelProductTyre tp on t.idPro=tp.id_prods
+	where tp.id_tyre =@idTyre
+end

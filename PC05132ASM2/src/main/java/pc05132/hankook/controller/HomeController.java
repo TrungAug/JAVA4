@@ -43,6 +43,7 @@ import pc05132.hankook.dao.ProductDAO;
 import pc05132.hankook.dao.UserDao;
 import pc05132.hankook.entity.Like;
 import pc05132.hankook.entity.Product;
+import pc05132.hankook.entity.Tyre;
 import pc05132.hankook.entity.User;
 import pc05132.hankook.untils.CookiesUntils;
 import pc05132.hankook.untils.HankookUntils;
@@ -67,7 +68,8 @@ public class HomeController extends HttpServlet {
 		String idLike = req.getParameter("idLike");
 
 		List<Product> listActive = ProductDAO.getInstance().findAllActive(true);
-
+		//List<Tyre> listTyre = HankookUntils.excuteNamedQueryNoParam("Tyre.FindAll", Tyre.class);
+		
 		if (uri.contains("update-account")) {
 			this.doUpdate(req, resp);
 			return;
@@ -104,7 +106,7 @@ public class HomeController extends HttpServlet {
 			}
 
 		}
-
+	//	req.setAttribute("listTyre", listTyre);
 		req.setAttribute("listPActive", listActive);
 		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 

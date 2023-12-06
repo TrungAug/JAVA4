@@ -21,6 +21,7 @@ import jakarta.persistence.UniqueConstraint;
 				name = "Product.findByIdProd",
 				query = "select p from Product p where p.idPro=:paramId"
 			)
+	
 })
 @Entity
 @Table(name = "products")
@@ -34,14 +35,19 @@ public class Product {
 
 	
 	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
+	@Cascade(value = CascadeType.REMOVE)
 	List<RelProductTyre> detailProducts;
 	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
+	@Cascade(value = CascadeType.REMOVE)
 	List<Image> images;
 	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
+	@Cascade(value = CascadeType.REMOVE)
 	List<Like> likes;
 	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
+	@Cascade(value = CascadeType.REMOVE)
 	List<Share> shares;
 	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
+	@Cascade(value = CascadeType.REMOVE)
 	List<Size> sizes;
 	
 	public String getIdPro() {
