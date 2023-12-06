@@ -5,6 +5,7 @@
 <header>
 	<fmt:setLocale value="${sessionScope.lang}" scope="request" />
 	<fmt:setBundle basename="global" scope="request" />
+	<p>${pageContext.response.locale}</p>
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-12">
 			<div class="myui-header__logo ">

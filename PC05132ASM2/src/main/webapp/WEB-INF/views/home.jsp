@@ -20,10 +20,12 @@
 	style="height: 100vh;">
 	<div class="container-fluid">
 		<%@ include file="/WEB-INF/views/component/header.jsp"%>
-		<%@ include file="/WEB-INF/views/component/homeindex.jsp"%>		
+		<%@ include file="/WEB-INF/views/component/homeindex.jsp"%>
 		<%@ include file="/WEB-INF/views/component/footer.jsp"%>
 	</div>
 
+
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

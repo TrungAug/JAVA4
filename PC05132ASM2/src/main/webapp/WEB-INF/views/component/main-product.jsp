@@ -20,15 +20,25 @@
 					<div
 						class="card-footer d-flex align-items-center justify-content-end">
 						<div class="me-4">
-							<a href="?idLike=${p.idPro}"
-								class="text-reset text-decoration-none"> <i
-								class="bi bi-suit-heart"></i> <span>${p.likes.size()}</span>
+							<a
+								href="${pageContext.request.contextPath}/home/index?action=doLike&idLike=${p.idPro}&userLike=${userLogin.idUs}"
+								class="text-reset text-decoration-none"> <c:choose>
+									<c:when test="${countLike % 2 != 0 && countLike!=0}">
+										<i class="bi bi-suit-heart-fill"></i>
+									</c:when>
+									<c:otherwise>
+										<i class="bi bi-suit-heart"></i>
+									</c:otherwise>
+								</c:choose> <span>${p.likes.size()}</span> <input type="hidden"
+								name="like${p.idPro}" />
 							</a>
 						</div>
 						<div class="me-4">
-							<a href="${pageContext.request.contextPath}/share?idShare=${p.idPro}"
+							<a id="likeLink"
+								href="${pageContext.request.contextPath}/share?action=doShare&idShare=${p.idPro}&user=${userLogin.idUs}"
 								class="text-reset text-decoration-none"> <i
-								class="bi bi-share"></i> <span>${p.shares.size()}</span>
+								class="bi bi-share"></i> <span>${p.shares.size()}</span> <input
+								type="hidden" name="share${p.idPro}">
 							</a>
 						</div>
 
