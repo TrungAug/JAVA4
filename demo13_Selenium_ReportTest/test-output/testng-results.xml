@@ -1,40 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-01T10:14:52 ICT" name="Default suite" finished-at="2023-12-01T10:15:19 ICT" duration-ms="26461">
+  <suite started-at="2023-12-07T07:51:24 ICT" name="Default suite" finished-at="2023-12-07T07:51:24 ICT" duration-ms="64">
     <groups>
     </groups>
-    <test started-at="2023-12-01T10:14:52 ICT" name="Default test" finished-at="2023-12-01T10:15:19 ICT" duration-ms="26461">
-      <class name="pc05132.demo12.report.test.ReportTest2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:pc05132.demo12.report.test.ReportTest2@443118b0]" started-at="2023-12-01T10:14:52 ICT" name="setup" finished-at="2023-12-01T10:14:58 ICT" duration-ms="5523" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginSuccess()[pri:0, instance:pc05132.demo12.report.test.ReportTest2@443118b0]" started-at="2023-12-01T10:14:58 ICT" name="loginSuccess" finished-at="2023-12-01T10:15:13 ICT" duration-ms="15663" status="FAIL">
-          <exception class="java.lang.AssertionError">
+    <test started-at="2023-12-07T07:51:24 ICT" name="Default test" finished-at="2023-12-07T07:51:24 ICT" duration-ms="64">
+      <class name="demo13.Selenium.TestExcel.LoginTestExcel">
+        <test-method is-config="true" signature="suiteTest()[pri:0, instance:demo13.Selenium.TestExcel.LoginTestExcel@5af3afd9]" started-at="2023-12-07T07:51:24 ICT" name="suiteTest" finished-at="2023-12-07T07:51:24 ICT" duration-ms="21" status="FAIL">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[expected [Home] but found [Dashboard]]]>
+              <![CDATA[com/google/common/collect/ImmutableMap]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Home] but found [Dashboard]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at pc05132.demo12.report.test.ReportTest2.loginSuccess(ReportTest2.java:57)
+              <![CDATA[java.lang.NoClassDefFoundError: com/google/common/collect/ImmutableMap
+at org.openqa.selenium.remote.service.DriverService$Builder.<init>(DriverService.java:249)
+at org.openqa.selenium.chrome.ChromeDriverService$Builder.<init>(ChromeDriverService.java:96)
+at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:89)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+at demo13.Selenium.TestExcel.LoginTestExcel.suiteTest(LoginTestExcel.java:138)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
@@ -51,17 +43,69 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: com.google.common.collect.ImmutableMap
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+... 29 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginSuccess -->
-        <test-method is-config="true" signature="closeBrownser()[pri:0, instance:pc05132.demo12.report.test.ReportTest2@443118b0]" started-at="2023-12-01T10:15:13 ICT" name="closeBrownser" finished-at="2023-12-01T10:15:19 ICT" duration-ms="5229" status="PASS">
+        </test-method> <!-- suiteTest -->
+        <test-method signature="LoginTest()[pri:0, instance:demo13.Selenium.TestExcel.LoginTestExcel@5af3afd9]" started-at="2023-12-07T07:51:24 ICT" name="LoginTest" finished-at="2023-12-07T07:51:24 ICT" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[com/google/common/collect/ImmutableMap]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: com/google/common/collect/ImmutableMap
+at org.openqa.selenium.remote.service.DriverService$Builder.<init>(DriverService.java:249)
+at org.openqa.selenium.chrome.ChromeDriverService$Builder.<init>(ChromeDriverService.java:96)
+at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:89)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+at demo13.Selenium.TestExcel.LoginTestExcel.suiteTest(LoginTestExcel.java:138)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: com.google.common.collect.ImmutableMap
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrownser -->
-      </class> <!-- pc05132.demo12.report.test.ReportTest2 -->
+        </test-method> <!-- LoginTest -->
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:demo13.Selenium.TestExcel.LoginTestExcel@5af3afd9]" started-at="2023-12-07T07:51:24 ICT" name="suiteTearDown" finished-at="1970-01-01T07:00:00 ICT" duration-ms="-1701910284427" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- demo13.Selenium.TestExcel.LoginTestExcel -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteHiNo">
+  <suite-files>
+  	<suite-file path="./testPhieuNhap.xml" />
+  	<suite-file path="./testPhieuXuat.xml" />
+  	<suite-file path="./testDangNhap.xml" />
+  	<suite-file path="./testDoiMatKhau.xml" />
+  </suite-files>
+  <test thread-count="5" name="main-suite-test1">
+    <classes>
+       <class name="com.ttt.TEST.TestPhieuNhap"/>
+       <class name="com.ttt.TEST.TestPhieuXuat"/>
+        <class name="com.ttt.TEST.TestDangNhap"/>
+         <class name="com.ttt.TEST.TestDoiMatKhau"/>
+    </classes>
+  </test> 
+</suite> 

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pc05132.demo12.report.test.ReportTest2">
+      <class name="demo13.Selenium.TestExcel.LoginTestExcel">
         <methods>
-          <include name="setup"/>
-          <include name="loginSuccess"/>
-          <include name="closeBrownser"/>
+          <include name="suiteTearDown"/>
+          <include name="suiteTest"/>
+          <include name="LoginTest"/>
         </methods>
-      </class> <!-- pc05132.demo12.report.test.ReportTest2 -->
+      </class> <!-- demo13.Selenium.TestExcel.LoginTestExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
