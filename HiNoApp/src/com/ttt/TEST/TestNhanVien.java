@@ -15,13 +15,11 @@ public class TestNhanVien {
 	NhanVienDAO dao = new NhanVienDAO();
 	NhanVien nv = new NhanVien();
 
-	
-
 	@Test(dataProvider = "nhanVienData")
 	public void themnvPass(String maNV, String hoTen, String diaChi, String email, String matKhau,
-			String ngaySinhString ,String expected) {
+			String ngaySinhString, String expected) {
 		String actual = "";
-	
+
 		try {
 			if (hoTen == null || hoTen.equalsIgnoreCase("")) {
 
@@ -41,9 +39,9 @@ public class TestNhanVien {
 			} else if (ngaySinhString == null || ngaySinhString.equalsIgnoreCase("")) {
 
 				actual = "Vui lòng nhập ngày sinh";
-			}else {
+			} else {
 				actual = "Thành công";
-				
+
 			}
 		} catch (Exception e) {
 			if (hoTen == null || hoTen.equalsIgnoreCase("") && diaChi == null
@@ -64,13 +62,28 @@ public class TestNhanVien {
 
 	@DataProvider
 	public Object[][] nhanVienData() {
-		return new Object[][] { { "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678",
-				"01-01-2003", "Thành công" } };
+		return new Object[][] {
+				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
+						"Thành công" },
+				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "01-01-2003",
+						"Thành công" },
+				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11", "01-01-2003",
+						"Mật khẩu không đúng định dạng" },
+				{ "NV2023072100005", "Đỗ tấn tài", "Hậu Giang", "tai@gmail.com", "11231222", "01-01-2003",
+						"Thành công" },
+
+				{ "NV2023101500017", "", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
+						"Vui lòng nhập họ tên" }, // Trống tên
+				{ "NV2023101500017", "Hồ Trọng Tường", "", "tuong@gmail.com", "12345678", "01-01-2003",
+						"Vui lòng nhập địa chỉ" }, // Trống dịa chỉ
+				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "", "12345678", "01-01-2003",
+						"Vui lòng nhập email" }, // Trống mai
+				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "",
+						"Vui lòng nhập ngày sinh" },// trống ngay sn
+
+		};
 
 	}
-	
-	
-	
 
 	@Test(dataProvider = "nhanVienDataUpdate")
 	public void UpdateNhanVien(String maNV, String hoTen, String diaChi, String email, String matKhau,
@@ -96,9 +109,9 @@ public class TestNhanVien {
 			} else if (ngaySinhString == null || ngaySinhString.equalsIgnoreCase("")) {
 
 				actual = "Vui lòng nhập ngày sinh";
-			}else {
+			} else {
 				actual = "Cập nhật thành công";
-				
+
 			}
 			// dao.update(nv);
 		} catch (Exception e) {
@@ -119,32 +132,27 @@ public class TestNhanVien {
 		Assert.assertEquals(actual, expected);
 	}
 
-
 	@DataProvider
 	public Object[][] nhanVienDataUpdate() {
 		return new Object[][] {
-				{ "NV2023072100002", "", "Hậu Giang", "tuong@gmail.com@gmail.com", "11111111",
-						"1999-01-08", "Vui lòng nhập họ tên" },
-				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "1999-01-08", "Cập nhật thành công" } };
+			{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "", "01-01-2003",
+			"Vui lòng nhập mật khẩu" },
+			{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "123", "01-01-2003",
+			"Mật khẩu không đúng định dạng" },
+				{ "NV2023101500017", "", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
+				"Vui lòng nhập họ tên" }, // Trống tên
+				{ "NV2023101500017", "Hồ Trọng Tường", "", "tuong@gmail.com", "12345678", "01-01-2003",
+				"Vui lòng nhập địa chỉ" },// Trống dịa chỉ
+				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "", "12345678", "01-01-2003",
+				"Vui lòng nhập email" },//Trống mai
+				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "",
+				"Vui lòng nhập ngày sinh" }//trống ngay sn
+				};
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	@DataProvider
-	public Object[][] DeletenhanVienDataProvider() {
-		return new Object[][] {
-				{ "NV2023072100002", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com@gmail.com", "11111111",
-						"1999-01-08", "Thành công" },
-				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "1999-01-08", true } };
-	}
 
-	@Test(groups = "testNhanVien")
-	public void XoaNhanVien_ThanhCong() {
+	@Test(dataProvider = "DeletenhanVienDataProvider")
+	public void XoaNhanVien_ThanhCong(String ma, String expected) {
 		System.out.println("Xóa nhân viên Thành công");
 		String actual = "";
 
@@ -164,19 +172,19 @@ public class TestNhanVien {
 			actual = "Nhân viên không tồn tại, không thể xóa";
 		}
 
-		String expected = "Xóa thành công";
+//		String expected = "Xóa thành công";
 		Assert.assertEquals(actual, expected);
 	}
-	
+
 	@DataProvider
-	public Object[][] ChecknhanVienDataProvider() {
+	public Object[][] DeletenhanVienDataProvider() {
 		return new Object[][] {
-				{ "Nguyễn Thành Trung", "trung@gmail.com", "1999-01-08", "11111111","11111111"
-						, "Thành công" },
-				{"Đỗ Tấn Tài", "tai@gmail.com", "1999-01-08", "11111111","11111111", "Thành Công" } };
+				{ "NV2023072100002", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com@gmail.com", "11111111",
+						"1999-01-08", "Thành công" },
+				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "1999-01-08", true } };
 	}
 
-	@Test(dataProvider = "ChecknhanVienDataProvider" )
+	@Test(dataProvider = "ChecknhanVienDataProvider")
 	public void checkNullTest(String ten, String email, int checkTuoi, String passMoi, String xacNhanPassMoi,
 			String expected) {
 		String patternDate = "\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}";
@@ -272,16 +280,7 @@ public class TestNhanVien {
 		Assert.assertEquals(actual, expected);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@Test(dataProvider = "nhanVienDataDelete")
+	@Test(dataProvider = "DeletenhanVienDataProvider")
 	public void deleteTest(String ma) {
 		System.out.println("Xóa nhân viên Thành công");
 		String actual = "";
@@ -294,7 +293,7 @@ public class TestNhanVien {
 			dao.delete(manv);
 			List<NhanVien> list = dao.selectByKeyword(manv);
 			if (nv == null) {
-				
+
 				actual = "Xóa thành công";
 			} else {
 				actual = "Nhân viên không tồn tại, không thể xóa";
@@ -306,23 +305,38 @@ public class TestNhanVien {
 			actual = "Xóa thất bại";
 		}
 
-		
-		
 	}
 
-	
+	@DataProvider
+	public Object[][] ChecknhanVienDataProvider() {
+		return new Object[][] {
+				{ "Nguyễn Thành Trung", "trung@gmail.com", "1999-01-08", "11111111", "11111111", "Thành công" },
+				{ "Đỗ Tấn Tài", "tai@gmail.com", "1999-01-08", "11111111", "11111111", "Thành Công" } };
+	}
 
-	@Test
-	public void checkTrungMaNV(String maNV, boolean expected) {
-		boolean actual = false;
+	@Test(dataProvider = "CheckTrungnhanVienDataProvider")
+	public void checkTrungMaNV(String maNV, String tenNV, String diaChi, String email, String sdt, String ngaySinh,
+			String expected) {
+		String actual = "Không trùng";
 		List<NhanVien> list = NhanVienDAO.getNewNhanVienDAO().selectAll();
+
+		String manv = "NV2023072100002";
 		for (NhanVien nv : list) {
 			if (nv.getMaNV().equalsIgnoreCase(maNV)) {
-				actual = false;
+				actual = "Trùng mã";
 			}
-
 		}
+
 		Assert.assertEquals(actual, expected);
+	}
+
+	@DataProvider
+	public Object[][] CheckTrungnhanVienDataProvider() {
+		return new Object[][] {
+				{ "NV2023072100002", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com@gmail.com", "11111111",
+						"1999-01-08", "Trùng mã" },
+				{ "NV20230ss100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "1999-01-08",
+						"Không trùng" } };
 	}
 
 }
