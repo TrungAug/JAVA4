@@ -6,6 +6,7 @@
       <class name="com.ttt.TEST.TestNhanVien">
         <methods>
           <include name="checkNullTest"/>
+          <include name="themnvPass" invocation-numbers="0"/>
           <include name="deleteTest"/>
           <include name="XoaNhanVien_ThanhCong"/>
         </methods>

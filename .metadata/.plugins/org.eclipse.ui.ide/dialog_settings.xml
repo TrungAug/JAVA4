@@ -16,6 +16,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\ASUS\Downloads\DOTANTAI_JAVA4\ASM_GD2_JAVA4_PC03980"/>
+			<item value="C:\Users\ASUS\Downloads\DOTANTAI_JAVA4"/>
 			<item value="D:\5. FALL 2023\Kiem Thu Nang Cao\Demo\demo12_ReportTest"/>
 			<item value="D:\5. FALL 2023\Java4\BaiLab\BUOI10_CounterWEB"/>
 			<item value="D:\3tProject-KiemThu\HiNoApp"/>

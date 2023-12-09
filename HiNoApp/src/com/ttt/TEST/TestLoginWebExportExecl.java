@@ -1,5 +1,9 @@
 package com.ttt.TEST;
 
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,69 +39,69 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestLoginWebExportExecl {
 	public WebDriver driver;
-	
+
 	// khai báo workbook và worksheet
-	
+
 	private XSSFWorkbook workbook;
 	private XSSFSheet worksheet;
-	
-	
-	//biến ghi kết quả ra file excel
-	
+
+	// biến ghi kết quả ra file excel
+
 	private Map<String, Object[]> testNGResult;
-	
-	//biến lưu trữ dữ liệu đọc từ file excel;
+
+	// biến lưu trữ dữ liệu đọc từ file excel;
 	private Map<String, String[]> dataLogin;
-	
-	
-	//đường dẫn của file excel
-	private final String EXECL_DIR="D:\\3tProject-KiemThu\\HiNoApp\\Resources\\data";
-	
-	//đường dẫn đến thư mục imgae
-	private final String IMAGE_DIR="D:\\3tProject-KiemThu\\HiNoApp\\Resources\\image";
-	
-	
-	String url ="";
-	//đọc dữ liệu từ file excel
-	
+
+	// đường dẫn của file excel
+	private final String EXECL_DIR = "D:\\3tProject-KiemThu\\HiNoApp\\Resources\\data";
+
+	// đường dẫn đến thư mục imgae
+	private final String IMAGE_DIR = "D:\\3tProject-KiemThu\\HiNoApp\\Resources\\image";
+
+	//String url = "";
+	// đọc dữ liệu từ file excel
+
 	private void readDataFromExcel() {
 		try {
 			dataLogin = new HashMap<String, String[]>();
-			String sheet="Test-data-login";
-			worksheet=workbook.getSheet(sheet);
-			if(worksheet==null) {
-				System.out.println("Không tìm thấy workSheet " +sheet);
-			}else {
-				//Đọc dữ liệu từ sheet tìm thấy
-				Iterator<Row> rows = worksheet.iterator();//đọc từng dòng dữ liệu trong sheet
-				DataFormatter dataFmt = new DataFormatter(); //đọc data chính xác
+			String sheet = "Test-data-login";
+			worksheet = workbook.getSheet(sheet);
+			if (worksheet == null) {
+				System.out.println("Không tìm thấy workSheet " + sheet);
+			} else {
+				// Đọc dữ liệu từ sheet tìm thấy
+				Iterator<Row> rows = worksheet.iterator();// đọc từng dòng dữ liệu trong sheet
+				DataFormatter dataFmt = new DataFormatter(); // đọc data chính xác
 				while (rows.hasNext()) {
 					Row row = rows.next();
-					if(row.getRowNum()>=1) {
+					if (row.getRowNum() >= 1) {
 						Iterator<Cell> cells = row.cellIterator();
 						String key = "";
-						String username="";
-						String password="";
-						String expected="";
-						while(cells.hasNext()) {
+						String username = "";
+						String password = "";
+						String expected = "";
+						while (cells.hasNext()) {
 							Cell cell = cells.next();
-							if(cell.getColumnIndex()==0) {
+							if (cell.getColumnIndex() == 0) {
 								key = dataFmt.formatCellValue(cell);
-							}else if(cell.getColumnIndex()==1) {
-								username=dataFmt.formatCellValue(cell);
-							}else if(cell.getColumnIndex()==2) {
-								password=dataFmt.formatCellValue(cell);
-							}else if(cell.getColumnIndex()==3) {
-								expected=dataFmt.formatCellValue(cell);
+							} else if (cell.getColumnIndex() == 1) {
+								username = dataFmt.formatCellValue(cell);
+							} else if (cell.getColumnIndex() == 2) {
+								password = dataFmt.formatCellValue(cell);
+							} else if (cell.getColumnIndex() == 3) {
+								expected = dataFmt.formatCellValue(cell);
 							}
-							String [] myArr= {username,password,expected};
+							String[] myArr = { username, password, expected };
 							dataLogin.put(key, myArr);
 						}
 					}
@@ -107,8 +111,8 @@ public class TestLoginWebExportExecl {
 			e.printStackTrace();
 		}
 	}
-	
-	//chụp hình
+
+	// chụp hình
 	public void takeScreenShot(WebDriver driver, String outputScreen) throws IOException {
 		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(screenshot, new File(outputScreen));
@@ -134,7 +138,7 @@ public class TestLoginWebExportExecl {
 	@BeforeClass
 	public void suiteTest() {
 		try {
-			url ="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+			//url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 			System.out.println(1);
 			testNGResult = new LinkedHashMap<String, Object[]>();
 			System.setProperty("webdriver.chrome.driver",
@@ -142,8 +146,7 @@ public class TestLoginWebExportExecl {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			System.out.println(2);
-			
-			
+
 			workbook = new XSSFWorkbook(new FileInputStream(new File(EXECL_DIR + "\\test-login.xlsx")));
 			System.out.println(3);
 			worksheet = workbook.getSheet("Test-data-login");
@@ -167,7 +170,7 @@ public class TestLoginWebExportExecl {
 	}
 
 	@Test
-	public void LoginTest() throws Exception {
+	public void LoginTestSuccess() throws Exception {
 		try {
 			Set<String> keySet = dataLogin.keySet();
 			int index = 1;
@@ -177,33 +180,55 @@ public class TestLoginWebExportExecl {
 				String password = value[1];
 				String expected = value[2];
 
-				
-				//String url ="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+				String url ="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 				driver.navigate().to(url);
-	
+
 				driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys(username);
 				Thread.sleep(5000);
 				driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(password);
 				Thread.sleep(5000);
 				driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 
-				String actualHeader=driver.findElement(By.xpath("//h6[normalize-space()='Dashboard']")).getText();
-				
-				Thread.sleep(1000);
-				
-				System.out.println("actualHeader "+actualHeader);
+				String currentUrl = driver.getCurrentUrl();
+				String actualHeader = "";
+				if (currentUrl.contains("auth/login")) {
+					if(!username.equalsIgnoreCase("Admin") && password.equals("admin123")) {
+						actualHeader = driver.findElement(By.xpath("//p[normalize-space()='Username : Admin']")).getText();
+					}else if (username.equalsIgnoreCase("Admin") && !password.equals("admin123")) {
+						actualHeader = driver.findElement(By.xpath("//p[normalize-space()='Password : admin123']")).getText();
+					}else {
+						actualHeader = driver.findElement(By.xpath("//h5[normalize-space()='Login']")).getText();	
+					}
+								
+				} else {
+					actualHeader = driver.findElement(By.xpath("//h6[normalize-space()='Dashboard']")).getText();
+				}
+
+				Thread.sleep(3000);
+
+				System.out.println("actualHeader " + actualHeader);
 				if (actualHeader.equalsIgnoreCase(expected)) {
-					testNGResult.put(String.valueOf(index + 1),
+					testNGResult.put(String.valueOf(index+1 ),
 							new Object[] { String.valueOf(index),
 									"Test Login susscess with valid username and password", username, password,
 									expected, actualHeader, "PASS", "" });
-					System.out.println("actualHeader "+actualHeader +"OK");
-				} else {
+					LogoutTest();
+				}else {
 					String path = IMAGE_DIR + "\\failure" + System.currentTimeMillis() + ".png";
 					takeScreenShot(driver, path);
-					testNGResult.put(String.valueOf(index + 1),
-							new Object[] { String.valueOf(index), "Test Login fail with invalid username and password",
-									username, password, expected, actualHeader, "FAILED", path.replace("\\", "/") });
+					if(!username.equalsIgnoreCase("Admin") && password.equals("admin123")) {
+						testNGResult.put(String.valueOf(index + 2),
+								new Object[] { String.valueOf(index+1), "Test Login fail with invalid username",
+										username, password, expected, actualHeader, "FAILED", path.replace("\\", "/") });
+					}else if(username.equalsIgnoreCase("Admin") && !password.equals("admin123")) {
+						testNGResult.put(String.valueOf(index + 3),
+								new Object[] { String.valueOf(index+2), "Test Login fail with invalid password",
+										username, password, expected, actualHeader, "FAILED", path.replace("\\", "/") });
+					}else {
+						testNGResult.put(String.valueOf(index + 4),
+								new Object[] { String.valueOf(index+3), "Test Login fail with invalid username and password",
+										username, password, expected, actualHeader, "FAILED", path.replace("\\", "/") });	
+					}						
 				}
 
 			}
@@ -211,19 +236,25 @@ public class TestLoginWebExportExecl {
 			e.printStackTrace();
 		}
 	}
-	@AfterMethod
-	public void closeBrownser() throws InterruptedException {
-		Thread.sleep(5000);
-		System.out.println("-------------------------");
-		System.out.println("HiNo testWeb Bat dau testcase moi!!!!");
-		driver.quit();;
+
+	public void LogoutTest() throws InterruptedException {
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[@class='oxd-userdropdown-tab']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[normalize-space()='Logout']")).click();
 	}
+
+	
+
+	
 	@AfterClass
-	public void suiteTearDown() {
+	public void suiteTearDown() throws InterruptedException {
+		
 		Set<String> keyset = testNGResult.keySet();
 		int rownum = 0;
 		for (String key : keyset) {
-			CellStyle rowStyle = workbook.createCellStyle();
+			//CellStyle rowStyle = workbook.createCellStyle();
 			Row row = worksheet.createRow(rownum++);
 			Object[] objArr = testNGResult.get(key);
 			int cellnum = 0;
@@ -267,6 +298,60 @@ public class TestLoginWebExportExecl {
 			}
 			driver.quit();
 		}
+		
 	}
 	
+//	@AfterMethod
+//	public void suiteTearDown() throws InterruptedException {
+//		
+//		Set<String> keyset = testNGResult.keySet();
+//		int rownum = 0;
+//		for (String key : keyset) {
+//			CellStyle rowStyle = workbook.createCellStyle();
+//			Row row = worksheet.createRow(rownum++);
+//			Object[] objArr = testNGResult.get(key);
+//			int cellnum = 0;
+//			for (Object obj : objArr) {
+//				Cell cell = row.createCell(cellnum++);
+//				if (obj instanceof Date) {
+//					cell.setCellValue((Date) obj);
+//				} else if (obj instanceof Boolean) {
+//					cell.setCellValue((Boolean) obj);
+//				} else if (obj instanceof String) {
+//					cell.setCellValue((String) obj);
+//				} else if (obj instanceof Double) {
+//					cell.setCellValue((Double) obj);
+//				}
+//
+//				if (obj.toString().contains("failure") && obj.toString().contains(".png")) {
+//					try {
+//						row.setHeightInPoints(80);
+//						writeImg(obj.toString(), row, cell, worksheet);
+//						CreationHelper creationHelper = worksheet.getWorkbook().getCreationHelper();
+//						XSSFHyperlink hyperlink = (XSSFHyperlink) creationHelper.createHyperlink(HyperlinkType.URL);
+//
+//						cell.setCellValue("full img");
+//						hyperlink.setAddress(obj.toString().replace("\\", "/"));
+//						cell.setHyperlink(hyperlink);
+//					} catch (Exception e) {
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//			try {
+//				FileOutputStream out = new FileOutputStream(new File("EXCEL_DIR" + "SaveTestNGResultToExecl.xlsx"));
+//				workbook.write(out);
+//				out.close();
+//				System.out.println("Susscessfully saved Selenium WebDriver TestNG result to Excel file");
+//
+//			} catch (FileNotFoundException e) {
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//			driver.quit();
+//		}
+//		
+//	}
+
 }

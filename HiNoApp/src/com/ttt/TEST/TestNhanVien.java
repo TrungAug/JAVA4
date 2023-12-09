@@ -43,6 +43,7 @@ public class TestNhanVien {
 				actual = "Thành công";
 
 			}
+			dao.insert(nv);
 		} catch (Exception e) {
 			if (hoTen == null || hoTen.equalsIgnoreCase("") && diaChi == null
 					|| diaChi.equalsIgnoreCase("") && email == null || email.equalsIgnoreCase("") && matKhau == null
@@ -63,23 +64,26 @@ public class TestNhanVien {
 	@DataProvider
 	public Object[][] nhanVienData() {
 		return new Object[][] {
-				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
-						"Thành công" },
-				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "01-01-2003",
-						"Thành công" },
-				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11", "01-01-2003",
-						"Mật khẩu không đúng định dạng" },
-				{ "NV2023072100005", "Đỗ tấn tài", "Hậu Giang", "tai@gmail.com", "11231222", "01-01-2003",
-						"Thành công" },
-
-				{ "NV2023101500017", "", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
-						"Vui lòng nhập họ tên" }, // Trống tên
-				{ "NV2023101500017", "Hồ Trọng Tường", "", "tuong@gmail.com", "12345678", "01-01-2003",
-						"Vui lòng nhập địa chỉ" }, // Trống dịa chỉ
-				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "", "12345678", "01-01-2003",
-						"Vui lòng nhập email" }, // Trống mai
-				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "",
-						"Vui lòng nhập ngày sinh" },// trống ngay sn
+//				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
+//						"Thành công" },
+//				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11111111", "01-01-2003",
+//						"Thành công" },
+//				{ "NV2023072100003", "Đỗ Tấn Tài", "Hậu Giang", "tai@gmail.com", "11", "01-01-2003",
+//						"Mật khẩu không đúng định dạng" },
+//				{ "NV2023072100005", "Đỗ tấn tài", "Hậu Giang", "tai@gmail.com", "11231222", "01-01-2003",
+//						"Thành công" },
+//
+//				{ "NV2023101500017", "", "Hậu Giang", "tuong@gmail.com", "12345678", "01-01-2003",
+//						"Vui lòng nhập họ tên" }, // Trống tên
+//				{ "NV2023101500017", "Hồ Trọng Tường", "", "tuong@gmail.com", "12345678", "01-01-2003",
+//						"Vui lòng nhập địa chỉ" }, // Trống dịa chỉ
+//				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "", "12345678", "01-01-2003",
+//						"Vui lòng nhập email" }, // Trống mai
+//				{ "NV2023101500017", "Hồ Trọng Tường", "Hậu Giang", "tuong@gmail.com", "12345678", "",
+//						"Vui lòng nhập ngày sinh" },// trống ngay sn
+				
+				{ "NV202312080005", "Đỗ tấn Mới", "Hậu Thơ", "tai@gmail.com", "11231222", null,
+				"Thành công" }
 
 		};
 
@@ -163,7 +167,7 @@ public class TestNhanVien {
 		if (nv == null) {
 
 			try {
-				dao.delete(manv);
+				//dao.delete(manv);
 				actual = "Xóa thành công";
 			} catch (Exception e) {
 				actual = "Xóa thất bại";

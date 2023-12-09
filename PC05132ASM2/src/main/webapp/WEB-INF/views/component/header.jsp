@@ -64,16 +64,16 @@
 												<li><a class="dropdown-item"
 													href="${pageContext.request.contextPath}/user-controller/sign-up">Sign
 														up</a></li>
-
+												<li><a class="dropdown-item"
+													href="${pageContext.request.contextPath}/user-controller/forget-pass">Forget
+														Password</a></li>
+												<li>
 											</c:when>
 											<c:otherwise>
 												<li><a class="dropdown-item"
 													href="${pageContext.request.contextPath}/user-controller/update-account">Update
 														Account</a></li>
-												<li><a class="dropdown-item"
-													href="${pageContext.request.contextPath}/user-controller/forget-pass">Forget
-														Password</a></li>
-												<li>
+												
 													<hr class="dropdown-divider">
 												</li>
 												<li><a class="dropdown-item"

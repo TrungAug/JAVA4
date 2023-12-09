@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ttt.TEST.TestWeb">
+      <class name="com.ttt.TEST.TestLoginWebExportExecl">
         <methods>
-          <include name="setup"/>
-          <include name="hanKookTest"/>
-          <include name="closeBrownser"/>
+          <include name="suiteTest"/>
+          <include name="LogoutTest"/>
+          <include name="suiteTearDown"/>
         </methods>
-      </class> <!-- com.ttt.TEST.TestWeb -->
+      </class> <!-- com.ttt.TEST.TestLoginWebExportExecl -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

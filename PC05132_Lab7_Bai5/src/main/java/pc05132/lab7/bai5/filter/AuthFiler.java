@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import pc05132.lab7.bai5.model.AccountMod;
 
-@WebFilter(filterName = "AuthFiler",urlPatterns = {"/admin/*","/account/sign-in"})
+@WebFilter(filterName = "AuthFiler",urlPatterns = {"/account/admin","/account/user"})
 public class AuthFiler implements Filter {
 
 	@Override
