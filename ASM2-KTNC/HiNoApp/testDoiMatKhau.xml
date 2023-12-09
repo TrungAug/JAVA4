@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteDoiMatKhau">
+  <test thread-count="5" name="TestDoiMatKhau">
+    <classes>
+      <class name="com.ttt.TEST.TestDoiMatKhau"/>
+    </classes>
+  </test> <!-- TestDoiMatKhau -->
+</suite> <!-- SuiteDoiMatKhau -->

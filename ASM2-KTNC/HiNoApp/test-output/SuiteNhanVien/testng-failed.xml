@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SuiteNhanVien]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TestNhanVien(failed)">
+    <classes>
+      <class name="com.ttt.TEST.TestNhanVien">
+        <methods>
+          <include name="checkNullTest"/>
+          <include name="deleteTest"/>
+          <include name="XoaNhanVien_ThanhCong"/>
+        </methods>
+      </class> <!-- com.ttt.TEST.TestNhanVien -->
+    </classes>
+  </test> <!-- TestNhanVien(failed) -->
+</suite> <!-- Failed suite [SuiteNhanVien] -->

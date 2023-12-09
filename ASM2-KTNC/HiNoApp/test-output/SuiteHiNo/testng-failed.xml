@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SuiteHiNo]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="main-suite-test1(failed)">
+    <classes>
+      <class name="com.ttt.TEST.TestDangNhap">
+        <methods>
+          <include name="loginTest" invocation-numbers="0 2 4"/>
+        </methods>
+      </class> <!-- com.ttt.TEST.TestDangNhap -->
+      <class name="com.ttt.TEST.TestPhieuNhap">
+        <methods>
+          <include name="checkExistSoKhungTest" invocation-numbers="0"/>
+          <include name="themPhieuNhapTest" invocation-numbers="0"/>
+          <include name="themXeVaoPhieuNhapTest" invocation-numbers="1 2"/>
+          <include name="checkNullTest" invocation-numbers="7 8"/>
+          <include name="getFormChiTietPhieuNhapSuaTest" invocation-numbers="0"/>
+          <include name="getFormChiTietPhieuNhapThemTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ttt.TEST.TestPhieuNhap -->
+      <class name="com.ttt.TEST.TestPhieuXuat">
+        <methods>
+          <include name="xoaPhieuXuat" invocation-numbers="3"/>
+        </methods>
+      </class> <!-- com.ttt.TEST.TestPhieuXuat -->
+      <class name="com.ttt.TEST.TestDoiMatKhau">
+        <methods>
+          <include name="checkNullTest" invocation-numbers="0 2 6 7 13 14 15 16"/>
+        </methods>
+      </class> <!-- com.ttt.TEST.TestDoiMatKhau -->
+      <class name="com.ttt.TEST.TestNhanVien">
+        <methods>
+          <include name="checkNullTest"/>
+          <include name="deleteTest"/>
+          <include name="XoaNhanVien_ThanhCong"/>
+        </methods>
+      </class> <!-- com.ttt.TEST.TestNhanVien -->
+    </classes>
+  </test> <!-- main-suite-test1(failed) -->
+</suite> <!-- Failed suite [SuiteHiNo] -->
